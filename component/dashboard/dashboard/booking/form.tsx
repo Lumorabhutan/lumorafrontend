@@ -1,0 +1,267 @@
+"use client";
+
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { motion } from "framer-motion";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import apiClient from "@/component/api/apiClient";
+import { getApiEndpoint } from "@/component/api";
+import { useEffect } from "react";
+import { showToast } from "nextjs-toast-notify"; // ONLY THIS
+
+// ──────────────────────────────────────────────────────────────
+// API RESPONSE TYPE
+// ──────────────────────────────────────────────────────────────
+interface ApiResponse {
+  message: string;
+}
+
+// ──────────────────────────────────────────────────────────────
+// PROPS & FIELD TYPES
+// ──────────────────────────────────────────────────────────────
+interface BookingDrawerProps {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+  editingBooking?: any;
+}
+
+interface Field {
+  id: string;
+  label: string;
+  type: "text" | "number" | "date" | "select";
+  placeholder?: string;
+  options?: string[];
+  colSpan?: number;
+}
+
+export function BookingDrawer({
+  open,
+  onOpenChange,
+  editingBooking,
+}: BookingDrawerProps) {
+  const fields: Field[] = [
+    { id: "email", label: "User Email", type: "text", placeholder: "Enter user email" },
+    { id: "name", label: "User Name", type: "text", placeholder: "Enter user name" },
+    { id: "country", label: "Country", type: "text", placeholder: "Enter country name" },
+    { id: "bookingDate", label: "Booking Date", type: "date" },
+    { id: "travelStartDate", label: "Travel Start", type: "date" },
+    { id: "travelEndDate", label: "Travel End", type: "date" },
+    { id: "adultNum", label: "Adults", type: "number", placeholder: "0" },
+    { id: "childNum", label: "Children", type: "number", placeholder: "0" },
+    { id: "numTravelers", label: "Total Travelers", type: "number", placeholder: "0" },
+    { id: "totalAmount", label: "Total Amount", type: "number", placeholder: "0" },
+    { id: "status", label: "Status", type: "select", options: ["Pending", "Confirmed", "Cancelled"] },
+    { id: "paymentStatus", label: "Payment Status", type: "select", options: ["Pending", "Paid", "Failed"] },
+    { id: "specialRequest", label: "Special Request", type: "text", placeholder: "Any special requests?", colSpan: 3 },
+  ];
+
+  const validationSchema = Yup.object().shape({
+    email: Yup.string().email("Invalid email").required("Email is required"),
+    name: Yup.string().required("Name is required"),
+    country: Yup.string().required("Country is required"),
+    bookingDate: Yup.date().required("Booking date is required"),
+    travelStartDate: Yup.date().required("Travel start date is required"),
+    travelEndDate: Yup.date().required("Travel end date is required"),
+    adultNum: Yup.number().min(0).required("Adults required"),
+    childNum: Yup.number().min(0).required("Children required"),
+    numTravelers: Yup.number().min(1).required("At least 1 traveler"),
+    totalAmount: Yup.number().min(0).required("Amount required"),
+    status: Yup.string().required("Status required"),
+    paymentStatus: Yup.string().required("Payment status required"),
+  });
+
+  const formik = useFormik({
+    enableReinitialize: true,
+    initialValues: {
+      email: editingBooking?.email || "",
+      name: editingBooking?.name || "",
+      country: editingBooking?.country || "",
+      bookingDate: editingBooking?.bookingDate || "",
+      travelStartDate: editingBooking?.travelStartDate || "",
+      travelEndDate: editingBooking?.travelEndDate || "",
+      adultNum: editingBooking?.adultNum || 0,
+      childNum: editingBooking?.childNum || 0,
+      numTravelers: editingBooking?.numTravelers || 1,
+      totalAmount: editingBooking?.totalAmount || 0,
+      status: editingBooking?.status || "Pending",
+      paymentStatus: editingBooking?.paymentStatus || "Pending",
+      specialRequest: editingBooking?.specialRequest || "",
+    },
+    validationSchema,
+    onSubmit: async (values, { resetForm, setSubmitting }) => {
+      setSubmitting(true);
+      try {
+        let res;
+        if (editingBooking) {
+          res = await apiClient.put<ApiResponse>(
+            getApiEndpoint.updateBooking(editingBooking.id),
+            values
+          );
+          showToast.success(res.data.message || "Booking updated successfully!", {
+            duration: 4000,
+            position: "top-right",
+            progress: true,
+          });
+        } else {
+          res = await apiClient.post<ApiResponse>(getApiEndpoint.createBooking(), values);
+          showToast.success(res.data.message || "Booking created successfully!", {
+            duration: 4000,
+            position: "top-right",
+            progress: true,
+          });
+        }
+        resetForm();
+        onOpenChange(false);
+      } catch (err: any) {
+        const errorMsg =
+          err?.response?.data?.message ||
+          err?.message ||
+          "Failed to save booking. Please try again.";
+
+        showToast.error(errorMsg, {
+          duration: 5000,
+          position: "top-right",
+          progress: true,
+        });
+      } finally {
+        setSubmitting(false);
+      }
+    },
+  });
+
+  // Auto-update total travelers
+  useEffect(() => {
+    const total = Number(formik.values.adultNum || 0) + Number(formik.values.childNum || 0);
+    if (total !== formik.values.numTravelers) {
+      formik.setFieldValue("numTravelers", total);
+    }
+  }, [formik.values.adultNum, formik.values.childNum]);
+
+  const hasError = (fieldId: string) =>
+    formik.touched[fieldId as keyof typeof formik.touched] &&
+    formik.errors[fieldId as keyof typeof formik.errors];
+
+  const getColSpan = (colSpan?: number) => {
+    switch (colSpan) {
+      case 1: return "col-span-1";
+      case 2: return "col-span-2";
+      case 3: return "col-span-3";
+      default: return "col-span-1";
+    }
+  };
+
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="min-w-3xl rounded-2xl shadow-2xl border border-gray-200 max-h-[90vh] overflow-y-auto">
+        <DialogHeader className="text-center">
+          <DialogTitle className="text-2xl font-semibold text-gray-800">
+            {editingBooking ? "Edit Booking" : "Add New Booking"}
+          </DialogTitle>
+          <DialogDescription className="text-gray-500">
+            Fill in the booking details below.
+          </DialogDescription>
+        </DialogHeader>
+
+        <motion.form
+          onSubmit={formik.handleSubmit}
+          className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          {fields.map((field) => (
+            <div key={field.id} className={`space-y-1 ${getColSpan(field.colSpan)}`}>
+              <Label htmlFor={field.id}>{field.label}</Label>
+
+              {field.type === "select" ? (
+                <div
+                  className={`rounded-md w-full ${
+                    hasError(field.id) ? "border border-red-500" : "border border-gray-300"
+                  }`}
+                >
+                  <Select
+                    value={formik.values[field.id as keyof typeof formik.values] as string}
+                    onValueChange={(v) => formik.setFieldValue(field.id, v)}
+                    disabled={formik.isSubmitting}
+                  >
+                    <SelectTrigger className="focus:ring-0 focus:ring-offset-0 w-full">
+                      <SelectValue placeholder={`Select ${field.label}`} />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {field.options?.map((opt) => (
+                        <SelectItem key={opt} value={opt}>
+                          {opt}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              ) : (
+                <Input
+                  id={field.id}
+                  type={field.type === "number" ? "number" : field.type}
+                  placeholder={field.placeholder}
+                  value={formik.values[field.id as keyof typeof formik.values] as string | number}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  disabled={field.id === "numTravelers" || formik.isSubmitting}
+                  className={`w-full ${
+                    hasError(field.id) ? "border-red-500 focus-visible:ring-red-500" : ""
+                  }`}
+                />
+              )}
+
+              {hasError(field.id) && (
+                <p className="text-red-500 text-sm">
+                  {formik.errors[field.id as keyof typeof formik.errors] as string}
+                </p>
+              )}
+            </div>
+          ))}
+
+          <div className="col-span-1 sm:col-span-2 md:col-span-3 flex justify-end gap-3 pt-2">
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => onOpenChange(false)}
+              disabled={formik.isSubmitting}
+            >
+              Cancel
+            </Button>
+            <Button
+              type="submit"
+              disabled={formik.isSubmitting}
+              className="bg-blue-600 hover:bg-blue-700 text-white"
+            >
+              {formik.isSubmitting ? (
+                <span className="flex items-center gap-2">
+                  <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
+                  </svg>
+                  Saving...
+                </span>
+              ) : editingBooking ? "Update" : "Save"}
+            </Button>
+          </div>
+        </motion.form>
+      </DialogContent>
+    </Dialog>
+  );
+}
