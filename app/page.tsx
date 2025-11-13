@@ -10,35 +10,27 @@ import WhyChooseUs from "@/component/why-us/why-us";
 import Image from "next/image";
 import TripsForFistTimer from "./pages/trips-for-first-timer";
 import { Are_You_Serious } from "next/font/google";
-import image1 from "@/public/image1.jpg";
+import image1 from "@/public/bhutan-thimphu-city.jpg";
 import TouristTalkAboutUs from "@/component/tourist-talk-aboutus";
+import AdventureTypes from "@/component/advanture";
 export default function Home() {
   return (
     <main className="overflow-hidden">
-      <Navbar />
       <HomePage />
       <AboutUs />
       
-      {/* <ToursSection /> */}
+      <ToursSection />
       <TripsForFistTimer />
-      <WhyChooseUs/>
       <Destinations
         title={"Lumora Tours and Travel video"}
         subtitle={"Beautiful & Romantic"}
         backgroundImage={image1}
         video={true}
       />
-      <AdventuresSection />
-      <Destinations
-        title="Start Exploring"
-        subtitle="Are you ready for adventures to"
-        bookUs={true}
-        contactUs={true}
-        backgroundImage={image1}
-        video={false}
-      />
+      {/* <AdventuresSection /> */}
       <TouristTalkAboutUs />
       <Footer />
+      
     </main>
   );
 }
