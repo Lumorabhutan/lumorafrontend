@@ -7,9 +7,6 @@ import ItineraryDay from "@/component/itinerary/itinerary";
 import image1 from "@/public/image1.jpg";
 import Landing from "@/component/landing/landing";
 import Navbar from "@/component/navbar/navbar";
-import PolicyPage, {
-  PolicyPageData,
-} from "@/component/policy-page/policy-page";
 import TourBand from "@/component/tour-band/tour- band";
 import TourAbout from "@/component/tour-highlights/tour-highlights";
 import {
@@ -22,6 +19,7 @@ import { Check, MapPin, X } from "lucide-react";
 import TripsForFistTimer from "../pages/trips-for-first-timer";
 import Footer from "@/component/footer";
 import PaymentCard from "@/component/payments";
+import PolicyPage from "@/component/policy-page/policy-page";
 
 export default function CultureMain() {
   const itinerary = [
@@ -198,7 +196,9 @@ export default function CultureMain() {
           </div>
         </div>
       </section>
-
+ <div className=" bg-[#EAEDF0] pt-3 pb-10">
+        <PolicyPage />
+      </div>
       <div>
         <HeroVideoSection
           title="Start Exploring"

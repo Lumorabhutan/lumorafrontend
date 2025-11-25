@@ -8,8 +8,8 @@ const StatsSection: React.FC = () => {
     <div className="w-full bg-white py-8 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 items-center gap-8 md:gap-4">
-          <StatItem value="+250" title="Attractive tours" subtitle="around Lumora Tours and Travel" />
-          <StatItem value="+1.1M" title="Clients from" subtitle="around the world" />
+          <StatItem value="+25" title="Attractive tours" subtitle="around Lumora Tours and Travel" />
+          <StatItem value="+1.1K" title="Clients from" subtitle="around the world" />
 
           {/* Rating Stat */}
           <div className="flex items-center md:flex-row flex-col gap-2">
@@ -18,7 +18,7 @@ const StatsSection: React.FC = () => {
             </div>
             <div className="text-left">
               <StarRating />
-              <div className="text-gray-700 font-medium">On Tripadvisor</div>
+              <div className="text-gray-700 font-medium"> Rating</div>
             </div>
           </div>
 

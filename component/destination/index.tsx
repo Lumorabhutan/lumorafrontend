@@ -52,7 +52,7 @@ export default function HeroVideoSection({
     <section className="relative w-full h-[50vh] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <Image
-        src={backgroundImage}
+        src={backgroundImage? "/Beautiful Dzong.jpg": backgroundImage}
         alt={subtitle}
         fill
         className="object-cover brightness-75"

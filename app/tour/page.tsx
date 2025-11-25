@@ -7,9 +7,6 @@ import ItineraryDay from "@/component/itinerary/itinerary";
 import image1 from "@/public/image1.jpg";
 import Landing from "@/component/landing/landing";
 import Navbar from "@/component/navbar/navbar";
-import PolicyPage, {
-  PolicyPageData,
-} from "@/component/policy-page/policy-page";
 import TourBand from "@/component/tour-band/tour- band";
 import TourAbout from "@/component/tour-highlights/tour-highlights";
 import {
@@ -21,6 +18,7 @@ import { Check, Flame, MapPin, Mountain, Tent, Wind, X } from "lucide-react";
 import TripsForFistTimer from "../pages/trips-for-first-timer";
 import Footer from "@/component/footer";
 import PaymentCard from "@/component/payments";
+import PolicyPage from "@/component/policy-page/policy-page";
 
 export default function CultureMain() {
  const itinerary = [
@@ -217,8 +215,8 @@ export default function CultureMain() {
         imagestyle="h-[500px] md:h-[600px] lg:h-[500px]"
         subContainer="w-full relative"
         maincontainer="w-full"
-        heading="Discover the essence of Bhutan"
-        subheading="Land in the scenic Paro Valley, greeted by the crisp Himalayan air and stunning mountain vistas."
+        heading="One Week in Bhutan"
+        subheading="Discover the essence of Bhutan in just seven unforgettable days. This journey blends cultural immersion with soft adventure"
         Itinerary="Book Us"
         headingstyle="font-mono"
       />
@@ -261,6 +259,9 @@ export default function CultureMain() {
       {/* <div className="bg-[#EAEDF0] pt-3 pb-10">
         <PolicyPage data={PolicyPageData} />
       </div> */}
+       <div className=" bg-[#EAEDF0] pt-3 pb-10">
+        <PolicyPage />
+      </div>
       <div>
         <HeroVideoSection
           title="Start Exploring"

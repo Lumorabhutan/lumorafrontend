@@ -51,7 +51,7 @@ export default function TripsForFistTimer() {
 
             {/* Right: Stats */}
             <div className="flex flex-row sm:flex-row items-center gap-2 text-center sm:text-left">
-              <h1 className="font-mono text-xl md:text-2xl font-bold">+10k</h1>
+              <h1 className="font-mono text-xl md:text-2xl font-bold">+1k</h1>
               <p className="font-sans text-sm md:text-base whitespace-nowrap">
                 Tourists have chosen these tours
               </p>

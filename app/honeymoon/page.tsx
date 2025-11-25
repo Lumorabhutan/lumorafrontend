@@ -7,9 +7,7 @@ import ItineraryDay from "@/component/itinerary/itinerary";
 import image1 from "@/public/image1.jpg";
 import Landing from "@/component/landing/landing";
 import Navbar from "@/component/navbar/navbar";
-import PolicyPage, {
-  PolicyPageData,
-} from "@/component/policy-page/policy-page";
+import PolicyPage from "@/component/policy-page/policy-page";
 import TourBand from "@/component/tour-band/tour- band";
 import TourAbout from "@/component/tour-highlights/tour-highlights";
 import { tourInfo, mockTourData, photoSets, newTourPackageData, eaternBhutanData, HoneymoonData } from "@/data/paro-places-data";
@@ -150,27 +148,6 @@ Winter (December–February): Crisp air, peaceful villages, fewer tourists <br/>
 
 
 
-  const PolicyPageData: PolicyPageData = {
-    city: "Noriva",
-    country: "Lumora Tours and Travel",
-    highlights: [
-      {
-        title: "Thimphu City Exploration",
-        description:
-          "Discover Bhutan’s charming capital, where traditional architecture blends seamlessly with modern life. Visit the Buddha Dordenma statue, Tashichho Dzong, and local markets.",
-        icon: Check,
-        color: "text-[#00A651]",
-      },
-      {
-        title: "Cultural Immersion",
-        description:
-          "Experience Bhutanese traditions through visits to monasteries, museums, and craft centers showcasing the country’s art, textiles, and heritage.",
-        icon: X,
-        color: "text-red-500",
-      },
-    ],
-  };
-
   return (
     <main className="w-full h-full">
       <Landing
@@ -220,7 +197,9 @@ Winter (December–February): Crisp air, peaceful villages, fewer tourists <br/>
           </div>
         </div>
       </section>
-
+ <div className=" bg-[#EAEDF0] pt-3 pb-10">
+        <PolicyPage />
+      </div>
       <div>
         <HeroVideoSection
           title="Start Exploring"

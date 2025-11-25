@@ -1,3 +1,4 @@
+
  export const testimonials = [
     {
       name: "John Doe",
@@ -42,3 +43,5 @@
       rating: 5,
     },
   ];
+
+

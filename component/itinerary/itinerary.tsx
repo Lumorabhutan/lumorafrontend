@@ -18,6 +18,7 @@ export default function ItineraryDay({
   rightImage,
 }: DayProps) {
   return (
+    
     <div className="space-y-0 md:space-y-1 px-4 md:px-8">
       {/* Header */}
       <header className="font-medium text-green-600">
@@ -81,6 +82,7 @@ export default function ItineraryDay({
           )}
         </div>
       )}
+     
     </div>
   );
 }

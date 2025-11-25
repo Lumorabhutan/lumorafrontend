@@ -7,9 +7,7 @@ import ItineraryDay from "@/component/itinerary/itinerary";
 import image1 from "@/public/image1.jpg";
 import Landing from "@/component/landing/landing";
 import Navbar from "@/component/navbar/navbar";
-import PolicyPage, {
-  PolicyPageData,
-} from "@/component/policy-page/policy-page";
+import PolicyPage from "@/component/policy-page/policy-page";
 import TourBand from "@/component/tour-band/tour- band";
 import TourAbout from "@/component/tour-highlights/tour-highlights";
 import {
@@ -224,28 +222,6 @@ const itinerary = [
 ];
 
 
-
-  const PolicyPageData: PolicyPageData = {
-    city: "Thimphu",
-    country: "Bhutan",
-    highlights: [
-      {
-        title: "Thimphu City Exploration",
-        description:
-          "Discover Bhutan’s charming capital, where traditional architecture blends seamlessly with modern life. Visit the Buddha Dordenma statue, Tashichho Dzong, and local markets.",
-        icon: Check,
-        color: "text-[#00A651]",
-      },
-      {
-        title: "Cultural Immersion",
-        description:
-          "Experience Bhutanese traditions through visits to monasteries, museums, and craft centers showcasing the country’s art, textiles, and heritage.",
-        icon: X,
-        color: "text-red-500",
-      },
-    ],
-  };
-
   return (
     <main className="w-full h-full">
       <Landing
@@ -254,8 +230,8 @@ const itinerary = [
         imagestyle="h-[500px] md:h-[600px] lg:h-[500px]"
         subContainer="w-full relative"
         maincontainer="w-full"
-        heading="Embark on a soul-stirring journey"
-        subheading="Land in the scenic Paro Valley, greeted by the crisp Himalayan air and stunning mountain vistas."
+        heading="Eastern Bhutan Birding Expedition"
+        subheading="Eastern Bhutan offers some of the richest bird habitats in the Himalayas, with elevations ranging from subtropical foothills to cool alpine zones."
         Itinerary="Book Us"
         headingstyle="font-mono"
       />
@@ -298,7 +274,9 @@ const itinerary = [
           </div>
         </div>
       </section>
-      
+       <div className=" bg-[#EAEDF0] pt-3 pb-10">
+        <PolicyPage />
+      </div>
       <div>
         <HeroVideoSection
           title="Start Exploring"

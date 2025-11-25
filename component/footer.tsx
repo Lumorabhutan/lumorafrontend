@@ -134,7 +134,7 @@ export default function Footer() {
       </div>
       <div>
         <a
-          href="https://wa.me/0097577853865" // replace with your number
+          href="https://wa.me/+97577893346" // replace with your number
           target="_blank"
           rel="noopener noreferrer"
           className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg z-50 animate-pulse-pop"

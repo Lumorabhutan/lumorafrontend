@@ -270,7 +270,7 @@ export const easternbhutanbirdsData: TourAboutData = {
   Season: "Autumn and Spring",
 
   duration: "10 Days, 9 Nights",       // ✅ dynamic duration
-  price: "USD-1750-2150",             // ✅ dynamic price
+  price: "(USD-1750-2150)",             // ✅ dynamic price
   highlights: [
     {
       title: "Destinations",

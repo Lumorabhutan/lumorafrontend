@@ -162,7 +162,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ data }) => {
 
       {/* ✅ Dialog Popup */}
       <Dialog open={!!selectedMember} onOpenChange={() => setSelectedMember(null)}>
-        <DialogContent className="sm:max-w-[425px]">
+        <DialogContent className="sm:max-w-[425px] max-h-[80vh] overflow-y-auto">
           {selectedMember && (
             <>
               <DialogHeader>
