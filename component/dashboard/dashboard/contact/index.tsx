@@ -24,10 +24,11 @@ import {
 } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import CountUp from "react-countup";
-import apiClient from "@/component/api/apiClient";
-import { getApiEndpoint } from "@/component/api";
+
 import { showToast } from "nextjs-toast-notify";
 import { ContactDrawer } from "./form";
+import { getApiEndpoint } from "@/app/api";
+import apiClient from "@/app/api/apiClient";
 
 // ──────────────────────────────────────────────────────────────
 // API RESPONSE

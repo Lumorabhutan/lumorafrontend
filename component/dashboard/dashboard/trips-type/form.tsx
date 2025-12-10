@@ -21,10 +21,11 @@ import { Switch } from "@/components/ui/switch";
 import { motion } from "framer-motion";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import apiClient from "@/component/api/apiClient";
-import { getApiEndpoint } from "@/component/api";
+
 import { showToast } from "nextjs-toast-notify"; // ONLY THIS
 import React from "react";
+import { getApiEndpoint } from "@/app/api";
+import apiClient from "@/app/api/apiClient";
 
 // ──────────────────────────────────────────────────────────────
 // API RESPONSE TYPE

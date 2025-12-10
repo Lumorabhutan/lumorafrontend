@@ -5,12 +5,12 @@ import Footer from "@/component/footer";
 export default function HomePage() {
   return (
     <main>
-  
+
       <Landing />
       <BlogSection />
       <div className="mt-8">
-        
-<Footer/>
+
+        <Footer />
       </div>
     </main>
   );
