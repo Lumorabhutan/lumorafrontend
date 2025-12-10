@@ -36,7 +36,7 @@ export default function ReviewUs() {
                 getApiEndpoint.createReview(),
                 values
             );
-          
+
             showToast.success(
                 response.data.message || "Review submitted successfully!",
                 {
@@ -63,11 +63,22 @@ export default function ReviewUs() {
     return (
         <div>
             <div className="h-full mb-40">
-                <div className="h-full flex justify-center mt-20">
-                    <Card className="rounded-sm w-[550px] h-full">
+                <div className="h-full flex items-center justify-center mt-20">
+                    <Card className="rounded-sm md:w-[550px] w-[310px] h-full ">
                         <CardHeader>
+                            <style jsx>{`
+              @keyframes blink {
+                0% { opacity: 1; }
+                50% { opacity: 0; }
+                100% { opacity: 1; }
+              }
+              .blink {
+                animation: blink 2s infinite;
+              }
+            `}</style>
                             <CardTitle className="font-bold text-xl font-sans">
-                                Review Us              </CardTitle>
+                                Review Us   <span className="text-red-500 blink text-sm">(Book your Tour first to Review)</span>
+                            </CardTitle>
                             <BorderHorizontal borderStyle="w-full border-b border-gray-300 mt-2 mr-2" />
                         </CardHeader>
 

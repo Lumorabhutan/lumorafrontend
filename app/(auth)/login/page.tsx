@@ -184,14 +184,13 @@ export default function Login() {
                       <LockKeyhole />
                       <TextCompoment text="Login" className="text-white font-serif" />
                     </Button>
-                    <BorderHorizontal borderStyle="w-full border-b border-gray-300 mt-2 mr-2" />
 
 
                   </Form>
 
                 )}
               </Formik>
-              <div className="mt-5">
+              {/* <div className="mt-5">
                 <span className="text-gray-600">
                   Don&apos;t have an account?{" "}
                 </span>
@@ -201,7 +200,7 @@ export default function Login() {
                 >
                   Sign up
                 </button>
-              </div>
+              </div> */}
             </CardContent>
           </Card>
         </div>

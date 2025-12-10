@@ -89,7 +89,7 @@ useEffect(() => {
           </div>
           <div className="flex items-center gap-6 mt-4 md:mt-0">
             <div className="text-right">
-              <p className="text-2xl font-extrabold text-gray-900">+95K</p>
+              <p className="text-2xl font-extrabold text-gray-900">+2K</p>
               <p className="text-sm text-gray-600">Tour bookings</p>
             </div>
             <div className="flex items-center gap-1">
@@ -97,7 +97,7 @@ useEffect(() => {
               <div className="flex">
                 {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}
               </div>
-              <span className="text-sm text-gray-600 ml-1">(+85K reviews)</span>
+              <span className="text-sm text-gray-600 ml-1">(+0.5K reviews)</span>
             </div>
           </div>
         </div>

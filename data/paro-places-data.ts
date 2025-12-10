@@ -144,6 +144,35 @@ export const eaternBhutanData: TourAboutData = {
   ],
   description: `Explore the untouched landscapes and rich culture of Eastern Bhutan over 8 days, entering via Samdrup Jongkhar from Guwahati Airport (India). Visit Trashigang, Trashiyangtse, and Pema Gatshel, experiencing vibrant valleys, historic dzongs, artisan villages, and serene monasteries. The flexible itinerary allows time for photography, cultural immersion, and authentic local experiences.`,
 };
+export const kayakingData: TourAboutData = {
+  city: "Paro – Punakha – Thimphu",
+  country: "Bhutan",
+  Season: "March–May & September–November",
+  duration: "5 Days / 4 Nights",
+  price: "(USD 1,850 – 2,000 per person)",
+
+  highlights: [
+    {
+      title: "Full-Day Kayaking & Rafting on Mo Chhu and Pho Chhu Rivers",
+      description:
+        "Navigate gentle rapids in the stunning Punakha Valley with dramatic river gorges, lush landscapes, and mountain backdrops.",
+    },
+    {
+      title: "Iconic Hike to Tiger’s Nest Monastery (Taktsang)",
+      description:
+        "Photograph the legendary cliffside monastery from every angle while hiking through pine forests and prayer-flag trails.",
+    },
+    {
+      title: "Gentle Introductory Paddle on Paro River",
+      description:
+        "Get comfortable with your kayak and equipment on Day 1 with a relaxed evening paddle and riverside orientation.",
+    }
+  ],
+
+  description: `Ride the Rapids and Explore Bhutan’s Rivers
+
+Bhutan, with its pristine rivers and breathtaking valleys, offers some of the most thrilling and scenic white-water adventures in the Himalayas. This exclusive 5-day kayaking and rafting tour combines heart-pumping river action on the Mo Chhu and Pho Chhu with the iconic Tiger’s Nest hike and cultural immersion in Thimphu. Perfect for adventure enthusiasts, nature lovers, and photographers who want to experience Bhutan both on and off the water — gliding through sparkling rivers, navigating gentle rapids, and capturing the untouched beauty of the Land of the Thunder Dragon.`,
+};
 export const newTourPackageData: TourAboutData = {
   city: "Thimphu",
   country: "Bhutan",
@@ -397,6 +426,95 @@ export const generalFestivalData: TourAboutData = {
   ],
   description: `The Tshechu Festival is Bhutan’s most important annual religious celebration, held in every district during different months of the year. Dedicated to Guru Padmasambhava, Tshechus feature sacred mask dances, colorful costumes, traditional music, blessings, and vibrant community gatherings. This tour allows visitors to experience the deep spiritual and cultural essence of Bhutan while exploring its scenic valleys, monasteries, and fortresses.`,
 };
+export const JomolhariData: TourAboutData = {
+  city: "Paro",
+  country: "Bhutan",
+  Season: "March–May & September–November",
+  duration: "8 Days / 7 Nights",       // ✅ dynamic duration
+  price: "(US $1850–2150)",             // ✅ dynamic price
+  highlights: [
+    {
+      title: "Majestic Views of Mount Jomolhari",
+      description:
+        "Camp at the stunning Jangothang Base Camp and witness breathtaking panoramic vistas of the sacred Mount Jomolhari (7,326m), Jichu Drake, and surrounding Himalayan peaks.",
+    },
+    {
+      title: "Crossing High-Altitude Passes",
+      description:
+        "Conquer iconic passes like Nyele La (4,700m), Yeli La (4,930m), and Bonte La (4,850m), offering sweeping alpine meadows, glacial valleys, and thrilling ascents and descents.",
+    },
+    {
+      title: "Diverse Himalayan Landscapes",
+      description:
+        "Traverse through rhododendron and pine forests, lush river valleys, yak pastures, and pristine alpine meadows, showcasing Bhutan's rich biodiversity and natural beauty.",
+    },
+    {
+      title: "Cultural Encounters in Remote Villages",
+      description:
+        "Visit isolated hamlets like Lingshi and interact with yak herders, experiencing authentic Bhutanese rural life, traditional stone houses, and glimpses of nomadic culture.",
+    },
+    {
+      title: "Hike to Tiger’s Nest Monastery (Taktsang)",
+      description:
+        "Conclude with a rewarding trek to Paro's iconic Taktsang Monastery, perched dramatically on a cliff, blending spiritual serenity with stunning valley views.",
+    },
+  ],
+  description: `The Jomolhari Trek is one of Bhutan’s most iconic and scenic treks, offering trekkers an immersive journey into the pristine Himalayan wilderness. Named after Mount Jomolhari (7,326 m), also known as the “Bride of Kangchenjunga,” the trek combines spectacular mountain views, glacial streams, alpine meadows, and traditional Bhutanese villages.
+
+This trek traverses high-altitude passes, rhododendron forests, and yak pastures while providing opportunities to experience rural Bhutanese life. It also includes cultural highlights, such as visits to Paro Rinpung Dzong, Gangtey Monastery, and the legendary Tiger’s Nest Monastery (Taktsang). Designed for trekkers with a reasonable level of fitness, the Jomolhari Trek offers both adventure and cultural enrichment in one of the world’s most beautiful mountain landscapes.
+
+`,
+};
+export const dassainData: TourAboutData = {
+  city: "Paro – Thimphu",
+  country: "Bhutan",
+  Season: "September–October (Dassain Season)",
+  duration: "5 Days / 4 Nights",
+  price: "(USD 1,550 – 1,850 per person)",
+  highlights: [
+    {
+      title: "Traditional Khada Welcome & Dassain Welcome Tea",
+      description:
+        "Begin your journey with a heartfelt traditional khada scarf welcome at Paro Airport, followed by a special Dassain Welcome Tea session with homemade snacks upon arrival in Thimphu.",
+    },
+    {
+      title: "Dassain Tika & Jamara Blessing Ceremony",
+      description:
+        "Experience the most sacred day of Dassain with an authentic Tika & Jamara blessing from the priest at Devi Pangchyan Mandir, complete with optional photos in traditional Bhutanese/Nepali attire.",
+    },
+    {
+      title: "Special Dassain Cultural Dinner & Folk Music",
+      description:
+        "Savor a festive Dassain Cultural Dinner featuring traditional Bhutanese and Nepali festival dishes, accompanied by live folk music and warm hospitality on your very first evening.",
+    },
+    {
+      title: "Iconic Hike to Tiger’s Nest Monastery",
+      description:
+        "Fulfill your Bhutan dream with a guided hike to the legendary Taktsang (Tiger’s Nest), perched 900m above Paro Valley, surrounded by prayer flags and mystical legends of Guru Rinpoche.",
+    },
+    {
+      title: "Dassain Festive Valley Picnic",
+      description:
+        "Enjoy a relaxed Dassain Festive Picnic Lunch in the serene Paro Valley after the Tiger’s Nest hike — surrounded by rivers, golden fields, and majestic mountain views.",
+    },
+    {
+      title: "Cozy Dassain Bonfire Night under the Stars",
+      description:
+        "Gather around a warm bonfire in Paro for a magical evening filled with festive meals, traditional music, storytelling, and cultural sharing with the Lumora family.",
+    },
+    {
+      title: "Visit Sacred Sites with Festival Spirit",
+      description:
+        "Explore Buddha Dordenma, Memorial Chorten, Tashichho Dzong, Paro Rinpung Dzong, National Museum, and Tachog Iron Bridge — all infused with the joy and colors of Dassain celebrations.",
+    },
+    {
+      title: "Dassain Blessing Souvenir & Heartfelt Farewell",
+      description:
+        "Depart with a special Dassain Blessing Souvenir from Lumora as a keepsake, along with warm Tashi Delek wishes and memories of joy, culture, and Himalayan celebration.",
+    },
+  ],
+  description: `Celebrate Dassain with Lumora Tours & Travels as we bring you an unforgettable festivity blended with spiritual blessings, authentic cultural experiences, scenic landscapes, and mindful travel. This package is designed for families, solo travellers, and groups who wish to experience Dassain in Bhutan with comfort, joy, and tradition.`,
+};
 export const introBhutanData: TourAboutData = {
   city: "Thimphu",
   country: "Bhutan",
@@ -563,7 +681,7 @@ export const FeelBhutanTour: TourAboutData = {
   Season: "Autumn and Spring",
 
   duration: "5 Days, 4 Nights",       // ✅ dynamic duration
-  price: "USD-1850-2200",             // ✅ dynamic price
+  price: "(USD-1850-2200)",             // ✅ dynamic price
   highlights: [
     {
       title: "Hike to the Iconic Taktsang (Tiger’s Nest) Monastery: ",
@@ -591,7 +709,58 @@ export const FeelBhutanTour: TourAboutData = {
 Experience the true essence of Bhutan in this 4-day journey that beautifully blends nature, culture, and heritage. From the tranquil valleys of Thimphu and Punakha to the spiritual heights of Paro’s Tiger’s Nest, this tour offers a heartfelt glimpse into Bhutan’s timeless charm. Discover ancient monasteries, traditional arts and crafts, vibrant folk music, and breathtaking Himalayan landscapes — all while connecting deeply with the country’s warm people and rich traditions. Let the Feel Bhutan Tour awaken your senses and leave you with memories of peace, joy, and cultural wonder.
 `,
 };
+export const PhotoTour: TourAboutData = {
+  city: "Paro – Thimphu – Punakha – Phobjikha",
+  country: "Bhutan",
+  Season: "March–May & September–November (Best light & clear skies)",
+  duration: "7 Days / 6 Nights",
+  price: "(USD 1,650 – 1,950 per person)",
+  highlights: [
+    {
+      title: "Dramatic Paro Valley Landing & Sunset at Paro Rinpung Dzong",
+      description:
+        "Start with one of the world’s most spectacular airport approaches, followed by golden-hour long-exposure photography of the glowing fortress and cantilever bridge.",
+    },
+    {
+      title: "Full-Day Tiger’s Nest Photography Hike",
+      description:
+        "Capture Taktsang Monastery in perfect morning light, with wide-angle reveals, architectural details, prayer-flag trails, and misty forest shots, plus an evening photo review session.",
+    },
+    {
+      title: "Night Photography in Thimphu",
+      description:
+        "Shoot the illuminated Tashichho Dzong, spinning prayer wheels, and city light trails after photographing Buddha Dordenma and Tachog Iron Bridge en route.",
+    },
+    {
+      title: "Dochula Pass & Punakha Dzong at Golden Hour",
+      description:
+        "Photograph 108 chortens with Himalayan panorama, then frame Punakha Dzong—the most beautiful fortress in Bhutan—at the confluence of two rivers, plus sunset on the suspension bridge.",
+    },
+    {
+      title: "Phobjikha Valley Wide-Angle & Astro Photography",
+      description:
+        "Expansive glacial valley landscapes, Gangtey Monastery overlooks, rare Black-Necked Cranes (Oct–Feb), and crystal-clear night skies perfect for Milky Way shots with prayer flags in the foreground.",
+    },
+    {
+      title: "Traditional Bhutanese Dress Portrait Session",
+      description:
+        "Create timeless cultural portraits in authentic Gho & Kira at Kyichu Lhakhang, one of Bhutan’s oldest temples, with stunning light and textures.",
+    },
+    {
+      title: "Final Sunrise Shoot in Paro Valley",
+      description:
+        "End your journey with soft golden light over traditional farmhouses, rice fields, and distant peaks before departure.",
+    },
+    {
+      title: "Daily Photo Reviews & Editing Guidance",
+      description:
+        "Relaxing evening sessions with your guide/photographer to review, critique, and refine your best images from each day.",
+    },
+  ],
+  description: `Capture the Land of Thunder Dragon Through Your Lens
 
+Immerse yourself in Bhutan’s breathtaking landscapes, ancient monasteries, vibrant prayer flags, and timeless village life on this exclusive 7-day Photography Tour. Curated for photographers of all levels, every day is timed for the best light—sunrise shoots, golden hours, blue-hour cityscapes, and star-filled nights—while visiting Bhutan’s most photogenic locations: Tiger’s Nest, Dochula Pass, Punakha Dzong, and the pristine Phobjikha Valley.`,
+};
 export const oneWeekInBhutan: TourAboutData = {
   city: "Noriva",
   country: "Bhutan",
