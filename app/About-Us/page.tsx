@@ -16,6 +16,7 @@ import TripsForFistTimer from "../pages/trips-for-first-timer";
 import TeamSection from "@/component/teams-picture-card/team-picture-card";
 import WhyChooseUs from "@/component/why-us/why-us";
 import ToursSection from "@/component/how-it-works/how-it-works";
+import { TourData, tours } from "@/component/how-it-works/data";
 
 export default function AboutMain() {
   const bioData = [
@@ -37,32 +38,32 @@ export default function AboutMain() {
     },
   ];
   const teamData = [
-  {
-    img: "/indralal.jpg",
-    name: "Indra Lal Acharja ",
-    email:"ceo@lumorabhutan.com",
-    role: "Chief Executive Officer & Co-Founder",
-    description: "Indra brings over a decade of leadership experience, honed through the implementation of numerous developmental and research projects in Bhutan. His work has taken him to various parts of the country, uncovering hidden gems—people, places, culture, and cuisines—those travelers deserve to experience firsthand. With a strong foundation in Sustainable Development, Indra is passionate about promoting tourism that respects the environment, preserves cultural heritage, and supports local communities. He combines this vision with international insights and a strong client-focused approach to drive Lumora’s operational excellence and strategic expansion Through thoughtful planning and eco-conscious practices, he ensures that every journey balances exploration with sustainability, allowing travelers to experience Bhutan responsibly while leaving a positive impact."
-  },
-  {
-    img: "/sonam.jpg",
-    name: "Sonam Zangpo ",
-    email:"lobaldirector@lumorabhutan.com",
-    role: "Global Director & Co-Founder",
-    description: "Sonam is a seasoned professional with a focus on international partnerships and strategic development. He holds a master’s degree in business administration from a reputed Australian university and has worked extensively in the field of migration, education consultancy, and cross-border mobility. While his passion for sustainable and mindful travel is rooted in his foundational studies in sustainable development, his interest in tourism stems from his personal experience he has had facilitating journeys of students from across South Asia to Australia and back. His vision of building a mindful experience and sustainable travel benefiting both the traveller and the host culminates in Lumora. "
-  },
-  {
-    img: "/sabitra.jpg",
-    name: "Sabitra Bhattarai ",
-      email:"info@lumorabhutan.com",
-    role: "Head of Operations",
-    description:`Sabitra is the operational backbone of Lumora Tours and Travel, ensuring that every journey is seamless, safe, and memorable. With extensive experience in operations, customer service, and logistics management, she excels at coordinating complex travel plans, anticipating challenges, and delivering exceptional experiences for every traveler.
+    {
+      img: "/indralal.jpg",
+      name: "Indra Lal Acharja ",
+      email: "ceo@lumorabhutan.com",
+      role: "Chief Executive Officer & Co-Founder",
+      description: "Indra brings over a decade of leadership experience, honed through the implementation of numerous developmental and research projects in Bhutan. His work has taken him to various parts of the country, uncovering hidden gems—people, places, culture, and cuisines—those travelers deserve to experience firsthand. With a strong foundation in Sustainable Development, Indra is passionate about promoting tourism that respects the environment, preserves cultural heritage, and supports local communities. He combines this vision with international insights and a strong client-focused approach to drive Lumora’s operational excellence and strategic expansion Through thoughtful planning and eco-conscious practices, he ensures that every journey balances exploration with sustainability, allowing travelers to experience Bhutan responsibly while leaving a positive impact."
+    },
+    {
+      img: "/sonam.jpg",
+      name: "Sonam Zangpo ",
+      email: "lobaldirector@lumorabhutan.com",
+      role: "Global Director & Co-Founder",
+      description: "Sonam is a seasoned professional with a focus on international partnerships and strategic development. He holds a master’s degree in business administration from a reputed Australian university and has worked extensively in the field of migration, education consultancy, and cross-border mobility. While his passion for sustainable and mindful travel is rooted in his foundational studies in sustainable development, his interest in tourism stems from his personal experience he has had facilitating journeys of students from across South Asia to Australia and back. His vision of building a mindful experience and sustainable travel benefiting both the traveller and the host culminates in Lumora. "
+    },
+    {
+      img: "/sabitra.jpg",
+      name: "Sabitra Bhattarai ",
+      email: "info@lumorabhutan.com",
+      role: "Head of Operations",
+      description: `Sabitra is the operational backbone of Lumora Tours and Travel, ensuring that every journey is seamless, safe, and memorable. With extensive experience in operations, customer service, and logistics management, she excels at coordinating complex travel plans, anticipating challenges, and delivering exceptional experiences for every traveler.
 Holding a bachelor’s degree in Climate and Environment Studies, Sabitra brings a strong understanding of sustainable and responsible travel practices, integrating environmental awareness into every aspect of her work. She has also completed professional training in project coordination and risk management, equipping her to manage both the everyday details and unforeseen challenges of travel logistics.
 Her meticulous planning, dedication, and eco-conscious approach make her an invaluable part of Lumora, ensuring that travelers not only explore Bhutan comfortably but also responsibly.
 `
-  },
-];
-
+    },
+  ];
+ const toursOptionals: TourData[] = tours;
   return (
     <main className="w-full h-full">
       <Landing
@@ -82,10 +83,14 @@ Her meticulous planning, dedication, and eco-conscious approach make her an inva
       <div className=" bg-[#EAEDF0] pt-3 pb-10">
         <BiblograhyComponent />
       </div>
-        <TeamSection data={teamData}  />
+      <TeamSection data={teamData} />
       <div>
-              <ToursSection />
-        
+        <ToursSection
+               tours={toursOptionals}
+               heading="Why choose us?"
+               subHeading="a"
+             />
+
         <Footer />
       </div>
     </main>
