@@ -104,13 +104,10 @@ export default function TravelAgencyAbout() {
            We are Leading Bhutan’s Next Era of Sustainable Travel
           </p>
           <p className="text-gray-700 text-base leading-relaxed">
-            Lumora Tours and Travel is a Bhutanese travel agency dedicated to
-            providing sustainable and mindful travel experiences. With a focus
-            on authentic cultural immersion, pristine natural landscapes, and
-            personalized itineraries, we help travelers explore Bhutan
-            responsibly while creating unforgettable memories. Our team of local
-            experts ensures seamless travel, from accommodations and guided
-            tours to unique adventures that celebrate the spirit of Bhutan.
+           "Travel Sustainably, Explore Mindfully” reflects Bhutan’s deep-rooted philosophy of harmony between people, nature, and culture. At Lumora Tours and Travels, we believe that travel should enrich both the traveler and the destination.
+Travel sustainably means minimizing environmental impact, supporting local livelihoods, and protecting Bhutan’s pristine landscapes, culture, and traditions for future generations.
+Explore mindfully invites travelers to slow down, connect deeply with local culture, traditions, and people, and experience Bhutan with awareness and respect.
+Through mindful exploration, we create authentic travel experiences that reflect the spirit of Bhutan and contribute positively to the country’s vision of Gross National Happiness."
           </p>
           <motion.div
             variants={container}
