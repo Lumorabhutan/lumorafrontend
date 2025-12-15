@@ -104,7 +104,7 @@ export default function TravelAgencyAbout() {
             We are Leading Bhutan’s Next Era of Sustainable Travel
           </p>
           <p className="text-gray-700 text-base leading-relaxed">
-            "Travel Sustainably, Explore Mindfully” reflects Bhutan’s deep-rooted philosophy of harmony between people, nature, and culture. At Lumora Tours and Travels, we believe that travel should enrich both the traveler and the destination.
+            <strong>"Travel Sustainably, Explore Mindfully”</strong> reflects Bhutan’s deep-rooted philosophy of harmony between people, nature, and culture. At Lumora Tours and Travels, we believe that travel should enrich both the traveler and the destination.
             Travel sustainably means minimizing environmental impact, supporting local livelihoods, and protecting Bhutan’s pristine landscapes, culture, and traditions for future generations.
             Explore mindfully invites travelers to slow down, connect deeply with local culture, traditions, and people, and experience Bhutan with awareness and respect.
             Through mindful exploration, we create authentic travel experiences that reflect the spirit of Bhutan and contribute positively to the country’s vision of Gross National Happiness."
