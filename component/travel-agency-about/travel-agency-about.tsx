@@ -25,7 +25,7 @@ export default function TravelAgencyAbout() {
     {
       icon: Mail,
       text: "Mail",
-  href: "https://mail.google.com/mail/?view=cm&fs=1&to=ceo@bhutanbestinbound.com",
+      href: "https://mail.google.com/mail/?view=cm&fs=1&to=ceo@bhutanbestinbound.com",
       color: "#D44638", // Gmail red
     },
     {
@@ -98,16 +98,16 @@ export default function TravelAgencyAbout() {
         {/* RIGHT CONTENT (on desktop), ABOVE ON MOBILE */}
         <div className="order-1 md:order-2 max-w-xl  md:mr-20 text-left md:text-left">
           <p className="text-green-600  uppercase text-2xl not-visited: mb-3 font-sans">
-           About  Lumora Tours and Travels
+            About  Lumora Tours and Travels
           </p>
           <p className="text-black font-bold font-lato  tracking-widest  text-xl not-visited: mb-3">
-           We are Leading Bhutan’s Next Era of Sustainable Travel
+            We are Leading Bhutan’s Next Era of Sustainable Travel
           </p>
           <p className="text-gray-700 text-base leading-relaxed">
-           "Travel Sustainably, Explore Mindfully” reflects Bhutan’s deep-rooted philosophy of harmony between people, nature, and culture. At Lumora Tours and Travels, we believe that travel should enrich both the traveler and the destination.
-Travel sustainably means minimizing environmental impact, supporting local livelihoods, and protecting Bhutan’s pristine landscapes, culture, and traditions for future generations.
-Explore mindfully invites travelers to slow down, connect deeply with local culture, traditions, and people, and experience Bhutan with awareness and respect.
-Through mindful exploration, we create authentic travel experiences that reflect the spirit of Bhutan and contribute positively to the country’s vision of Gross National Happiness."
+            "Travel Sustainably, Explore Mindfully” reflects Bhutan’s deep-rooted philosophy of harmony between people, nature, and culture. At Lumora Tours and Travels, we believe that travel should enrich both the traveler and the destination.
+            Travel sustainably means minimizing environmental impact, supporting local livelihoods, and protecting Bhutan’s pristine landscapes, culture, and traditions for future generations.
+            Explore mindfully invites travelers to slow down, connect deeply with local culture, traditions, and people, and experience Bhutan with awareness and respect.
+            Through mindful exploration, we create authentic travel experiences that reflect the spirit of Bhutan and contribute positively to the country’s vision of Gross National Happiness."
           </p>
           <motion.div
             variants={container}
