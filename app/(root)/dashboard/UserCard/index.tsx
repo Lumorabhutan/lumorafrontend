@@ -222,7 +222,7 @@ export default function UserCard() {
 
                   {/* Actions - Permission-based */}
                   <TableCell className="flex gap-2 justify-end">
-                    {hasPermission("user:update") && (
+                    {/* {hasPermission("user:update") && ( */}
                       <Button
                         size="sm"
                         variant="outline"
@@ -231,7 +231,7 @@ export default function UserCard() {
                       >
                         <Edit size={16} />
                       </Button>
-                    )}
+                    {/* )} */}
 
                     {hasPermission("user:delete") && (
                       <Button
