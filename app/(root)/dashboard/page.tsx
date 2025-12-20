@@ -11,7 +11,6 @@ import Navbar from "./navbar";
 import ReviewCard from "./review";
 import TripsCard from "./trips-type";
 import DashboardContent from "./DashboardContent";
-import ProfileCard from "./ProfileCard";
 import UserCard from "./UserCard";
 
 import {
@@ -21,13 +20,15 @@ import {
   Map,
   Star,
   Mail,
-  User,
+  Package,
+  ShoppingCart,
+  FileText,
 } from "lucide-react";
+
 import { jwtDecode, JwtPayload } from "jwt-decode";
 import BlogCard from "./blog";
-import  ProductCard  from "@/component/dashboard/dashboard/products";
+import ProductCard from "@/component/dashboard/dashboard/products";
 import OrderCard from "@/component/dashboard/dashboard/order";
-
 
 export default function DashboardPage() {
   const [activeItem, setActiveItem] = useState("Dashboard");
@@ -35,98 +36,96 @@ export default function DashboardPage() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const router = useRouter();
 
-  // Decode JWT and check role
   useEffect(() => {
     const token = Cookies.get("accessToken");
 
+    // Debug: Check if token exists
     if (!token) {
-      console.warn("No token found");
-      router.push("/"); // no token → redirect
+      console.warn("No accessToken found in cookies");
+      router.push("/");
       return;
     }
 
+    console.log("Token found:", token.substring(0, 20) + "..."); // Log first part for debug
+
     try {
       const decoded = jwtDecode<JwtPayload & { role?: string }>(token);
-      const userRole = decoded?.role ?? null;
+      const userRole = decoded.role;
 
       if (!userRole) {
-
-        console.error("Role not found in token");
-        router.push("/"); // invalid role → redirect
+        console.error("No role found in JWT token");
+        Cookies.remove("accessToken");
+        router.push("/");
         return;
       }
 
-      if (userRole.toLowerCase() === "client") {
-        router.push("/register"); // client → register
-        return;
-      }
       const normalizedRole = userRole.toLowerCase();
 
-      // Only allow admin, manager, and user → stay on dashboard
-      if (["admin", "manager", "user"].includes(normalizedRole)) {
-        console.log("Role is valid:", userRole);
-        router.push("/dashboard"); // e.g., client or unknown role → redirect home
+      // Block client users
+      if (normalizedRole === "client") {
+        router.push("/register");
         return;
       }
 
-      // valid admin/Manager/User → allow access
-      setRole(userRole);
+      // Allow only these roles on dashboard
+      if (!["admin", "manager", "user", "accounts"].includes(normalizedRole)) {
+        console.warn("Unauthorized role:", userRole);
+        Cookies.remove("accessToken");
+        router.push("/");
+        return;
+      }
+
+      // SUCCESS: Valid user → allow access
+      console.log("Access granted for role:", userRole);
+      setRole(userRole); // This now runs!
     } catch (err) {
-      console.error("Invalid token:", err);
-      router.push("/"); // invalid token → redirect
+      console.error("Invalid or expired token:", err);
+      Cookies.remove("accessToken");
+      router.push("/");
     }
   }, [router]);
 
-  // Sidebar menu based on role
+  // Full menu for allowed roles
   const menuItems = useMemo(() => {
-    if (role && ["Admin", "Manager", "User"].includes(role)) {
-      return [
-        { name: "Dashboard", icon: <LayoutDashboard className="w-5 h-5" /> },
-        { name: "Users", icon: <Users className="w-5 h-5" /> },
-        { name: "Bookings", icon: <BookOpen className="w-5 h-5" /> },
-        { name: "Trips", icon: <Map className="w-5 h-5" /> },
-        { name: "Reviews", icon: <Star className="w-5 h-5" /> },
-        { name: "Contact", icon: <Mail className="w-5 h-5" /> },
-        { name: "Product", icon: <User className="w-5 h-5" /> },
-        { name: "Orders", icon: <User className="w-5 h-5" /> },
-        { name: "Blog", icon: <User className="w-5 h-5" /> },
+    if (!role) return [];
 
-      ];
-    }
-
-    return []; // clients or invalid roles get no menu
+    return [
+      { name: "Dashboard", icon: <LayoutDashboard className="w-5 h-5" /> },
+      { name: "Users", icon: <Users className="w-5 h-5" /> },
+      { name: "Bookings", icon: <BookOpen className="w-5 h-5" /> },
+      { name: "Trips", icon: <Map className="w-5 h-5" /> },
+      { name: "Reviews", icon: <Star className="w-5 h-5" /> },
+      { name: "Contact", icon: <Mail className="w-5 h-5" /> },
+      { name: "Product", icon: <Package className="w-5 h-5" /> },
+      { name: "Orders", icon: <ShoppingCart className="w-5 h-5" /> },
+      { name: "Blog", icon: <FileText className="w-5 h-5" /> },
+    ];
   }, [role]);
 
-  // Render main content based on active sidebar item
   const renderContent = () => {
     switch (activeItem.toLowerCase()) {
-      case "dashboard":
-        return <DashboardContent />;
-      case "users":
-        return <UserCard />;
-      case "bookings":
-        return <BookingCard />;
-      case "trips":
-        return <TripsCard />;
-      case "reviews":
-        return <ReviewCard />;
-      case "contact":
-        return <ContactCard />;
-    
-      case "product":
-        return <ProductCard />;
-         case "orders":
-        return <OrderCard />;
-         case "blog":
-        return <BlogCard />;
-      default:
-        return <DashboardContent />;
+      case "dashboard": return <DashboardContent />;
+      case "users": return <UserCard />;
+      case "bookings": return <BookingCard />;
+      case "trips": return <TripsCard />;
+      case "reviews": return <ReviewCard />;
+      case "contact": return <ContactCard />;
+      case "product": return <ProductCard />;
+      case "orders": return <OrderCard />;
+      case "blog": return <BlogCard />;
+      default: return <DashboardContent />;
     }
   };
 
-  // Show loading until role is determined
+  // Loading state while checking token/role
   if (role === null) {
-    // router.push("/")
+    return (
+      <div className="flex h-screen items-center justify-center bg-gray-50 dark:bg-gray-950">
+        <div className="text-xl font-medium text-gray-700 dark:text-gray-300">
+          Loading dashboard...
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -136,7 +135,7 @@ export default function DashboardPage() {
         setActiveItem={setActiveItem}
         menuItems={menuItems}
         isOpen={sidebarOpen}
-        onToggle={() => setSidebarOpen((v) => !v)}
+        onToggle={() => setSidebarOpen(prev => !prev)}
         onItemClick={() => setSidebarOpen(false)}
       />
 
@@ -144,7 +143,7 @@ export default function DashboardPage() {
         <Navbar
           activeItem={activeItem}
           isSidebarOpen={sidebarOpen}
-          onToggleSidebar={() => setSidebarOpen((v) => !v)}
+          onToggleSidebar={() => setSidebarOpen(prev => !prev)}
         />
 
         <main className="flex-1 overflow-auto p-4 md:p-6 bg-gray-50 dark:bg-gray-950">
