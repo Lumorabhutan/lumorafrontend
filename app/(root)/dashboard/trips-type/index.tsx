@@ -125,7 +125,18 @@ export default function TripsCard() {
     },
   ];
 
- 
+  const handleDeleteTrip = async () => {
+    if (!tripToDelete) return;
+
+    try {
+      await apiClient.delete(getApiEndpoint.deleteTrip(tripToDelete));
+      setTrips((prev) => prev.filter((t) => t.id !== tripToDelete));
+      setDeleteDialogOpen(false);
+      setTripToDelete(null);
+    } catch (err) {
+      console.error("Error deleting trip", err);
+    }
+  };
 
   const openEditDrawer = (trip: TripType) => {
     setEditingTrip(trip);
@@ -224,8 +235,7 @@ export default function TripsCard() {
                   <TableCell className="dark:text-gray-200 text-green-600">
                     {t.discountPercent ? `${t.discountPercent}%` : "—"}
                   </TableCell>
-                  <TableCell className="dark:text-gray-...
-                    font-semibold text-lg text-emerald-600 dark:text-emerald-400">
+                  <TableCell className="dark:text-gray-200 font-semibold text-lg text-emerald-600 dark:text-emerald-400">
                     ${t.finalPrice || t.originalPrice || 0}
                   </TableCell>
                   <TableCell className="dark:text-gray-200">
@@ -314,6 +324,32 @@ export default function TripsCard() {
       />
 
       {/* Delete Confirmation Dialog */}
+      <Dialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
+        <DialogContent className="dark:bg-gray-800 dark:border-gray-700">
+          <DialogHeader>
+            <DialogTitle className="dark:text-white">Confirm Delete</DialogTitle>
+            <DialogDescription className="dark:text-gray-400">
+              Are you sure you want to delete this trip? This action cannot be undone.
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button
+              variant="outline"
+              onClick={() => setDeleteDialogOpen(false)}
+              className="dark:border-gray-600 dark:text-gray-300"
+            >
+              Cancel
+            </Button>
+            <Button
+              variant="destructive"
+              onClick={handleDeleteTrip}
+              className="dark:bg-red-900 dark:hover:bg-red-800"
+            >
+              Delete
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

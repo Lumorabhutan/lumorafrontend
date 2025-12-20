@@ -24,7 +24,7 @@ export const getApiEndpoint = {
     if (isFirsttime) {
       return `${apiBaseUrl}/trips?isFirsttime=${encodeURIComponent(isFirsttime)}`; // ✅ Get trips by category
     }
-     if (category) {
+    if (category) {
       return `${apiBaseUrl}/trips?category=${encodeURIComponent(category)}`; // ✅ Get trips by category
     }
     return `${apiBaseUrl}/trips`;
@@ -32,7 +32,7 @@ export const getApiEndpoint = {
   getTripById: (id: string) => `${apiBaseUrl}/trips/${id}`,
   createTrip: () => `${apiBaseUrl}/trips`,
   updateTrip: (id: string) => `${apiBaseUrl}/trips/${id}`,
-
+  deleteTrip: (id: number) => `${apiBaseUrl}/trips/${id}`,
   // Reviews
   getReview: () => `${apiBaseUrl}/review`,
   getUserReview: () => `${apiBaseUrl}/fetchActiveReview`,
@@ -67,7 +67,7 @@ export const getApiEndpoint = {
 
   createOrder: () => `${apiBaseUrl}/orders`,
   getOrders: () => `${apiBaseUrl}/orders`,
-  updateOrder: (id?: number ) => `${apiBaseUrl}/orders/${id}`,
+  updateOrder: (id?: number) => `${apiBaseUrl}/orders/${id}`,
   getBlogById: (id: number) => `${apiBaseUrl}/blogs/${id}`,
 
   // Create a new blog
