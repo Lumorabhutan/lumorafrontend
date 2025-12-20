@@ -2,11 +2,14 @@
 
 import BorderHorizontal from "@/component/border-horizontal/border-horizontal";
 import FormikController from "@/component/input-fields-controller/input-fields-controller";
+import Navbar from "@/component/navbar/navbar";
 import TextCompoment from "@/component/text/text";
+import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
+  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -17,6 +20,8 @@ import {
 import { validationSignSchema } from "@/data/Validations/register-validation";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Form, Formik, FormikHelpers } from "formik";
+import { data } from "jquery";
+import router from "next/router";
 import { LockKeyhole } from "lucide-react";
 import Footer from "@/component/footer";
 import { useRouter } from "next/navigation";
@@ -26,12 +31,13 @@ import { showToast } from "nextjs-toast-notify";
 import Cookies from "js-cookie";
 import { jwtDecode, JwtPayload } from "jwt-decode";
 
-// Updated interface to match your real API response
-export interface SignInResponse {
-  success: boolean;
+export interface SignInResponseAttributes {
+  status: number;
   message: string;
-  accessToken: string;
-  refreshToken: string;
+  data: {
+    accessToken: string;
+    refreshToken: string;
+  };
 }
 
 export interface SignInAttributes {
@@ -41,87 +47,74 @@ export interface SignInAttributes {
 
 export default function Login() {
   const router = useRouter();
-
   const handleSubmit = async (
     values: SignInAttributes,
     { resetForm }: FormikHelpers<SignInAttributes>
   ) => {
     try {
-      // Make login request
-      const response = await apiClient.post<SignInResponse>(
+      // Make API call
+      const response = await apiClient.post(
         getApiEndpoint.login(),
         values
       );
-       const token = Cookies.get("accessToken");
-       console.log("Login response token:", token);
-      // Destructure tokens directly from root
-      const { accessToken, refreshToken, message } = response.data;
 
-      if (!accessToken) {
-        showToast.error("Login failed: No token received", {
-          duration: 5000,
+      // Success toast
+      showToast.success(
+        response.data.message || "Login successfully!",
+        {
+          duration: 4000,
           position: "top-right",
-        });
+          progress: true,
+        }
+      );
+      const token = Cookies.get("accessToken");
+      if (!token) {
+        console.log("No token found", token);
+
+        router.push("/"); // no token → redirect
         return;
       }
 
-      // Store tokens in cookies
- 
-      // Success message
-      showToast.success(message || "Login successful!", {
-        duration: 4000,
-        position: "top-right",
-        progress: true,
-      });
-
-      // Decode JWT to get role
       try {
-        const decoded = jwtDecode<JwtPayload & { role?: string }>(accessToken);
-        const userRole = decoded.role;
+        const decoded = jwtDecode<JwtPayload & { role?: string }>(token);
+        const userRole = decoded?.role ?? null;
 
         if (!userRole) {
-          console.log("No role in token");
-          Cookies.remove("accessToken");
-          router.push("/");
+          console.log("No role found in token");
+          router.push("/"); // invalid role → redirect
           return;
         }
 
-        const normalizedRole = userRole.toLowerCase();
-
-        // Client role → redirect to register or home
-        if (normalizedRole === "client") {
-          router.push("/register");
+        if (userRole.toLowerCase() === "client") {
+          router.push("/register"); // client → register
+          return;
+        }
+        if(userRole.toLowerCase() === "admin" || userRole.toLowerCase() === "user" || userRole.toLowerCase() === "manager" || userRole.toLowerCase() === "accounts" ){
+        console.log("Valid role:", userRole);
+          router.push("/dashboard"); // client → register
           return;
         }
 
-        // Allowed roles → go to dashboard
-        if (["admin", "manager", "user", "accounts"].includes(normalizedRole)) {
-          console.log("Logged in as:", userRole);
-          router.push("/dashboard");
-          return;
-        }
-
-        // Unknown role
-        Cookies.remove("accessToken");
-        router.push("/");
-      } catch (decodeError) {
-        console.error("Invalid JWT token:", decodeError);
-        Cookies.remove("accessToken");
-        router.push("/");
+        // valid admin/Manager/User → allow access
+      } catch (err) {
+        console.error("Invalid token:", err);
+        router.push("/"); // invalid token → redirect
       }
+      // Log values (optional)
 
+      // Reset form
       resetForm();
     } catch (error: any) {
-      const errorMessage =
-        error?.response?.data?.message ||
-        error?.response?.data?.error ||
-        "Login failed. Please check your credentials.";
+      // Handle errors
 
-      showToast.error(errorMessage, {
-        duration: 5000,
-        position: "top-right",
-        progress: true,
-      });
+      showToast.error(
+        error?.response?.data?.error || error?.error || "Failed to Login",
+        {
+          duration: 5000,
+          position: "top-right",
+          progress: true,
+        }
+      );
     }
   };
 
@@ -142,6 +135,7 @@ export default function Login() {
                 onSubmit={handleSubmit}
                 initialValues={initialValues}
                 validationSchema={validationSignSchema}
+              //   onSubmit={onSubmit}
               >
                 {() => (
                   <Form className="flex flex-col gap-4">
@@ -156,16 +150,29 @@ export default function Login() {
                       />
                     ))}
 
+                    {/* {data?.message && (
+                    <Alert
+                      onClose={() => OnSuccess()}
+                      color="success"
+                      variant="faded"
+                      title="Success"
+                      description={data?.message}
+                      isVisible={true}
+                      className="border border-green-300 bg-green-50 text-green-800 flex items-center gap-8 p-4 rounded-md"
+                    />
+                  )} */}
                     <div className="flex flex-row justify-between">
                       <div className="text-center flex items-center gap-4">
-                        <Checkbox className="border-gray-400 data-[state=checked]:bg-green-600 data-[state=checked]:border-green-600 data-[state=checked]:text-white" />
-                        <span className="text-sm text-gray-900">Remember Me</span>
+                        <Checkbox className=" border-gray-400  data-[state=checked]:bg-green-600 data-[state=checked]:border-green-600 data-[state=checked]:text-white" />
+                        <span className="text-sm text-gray-900">
+                          Remember Me
+                        </span>
                       </div>
 
                       <button
                         type="button"
-                        className="text-green-600 hover:text-green-500"
-                        onClick={() => router.push("/forgot-password")}
+                        className="text-green-600 hover:text-green-500 "
+                        onClick={() => router.push("forgot-password")}
                       >
                         <TextCompoment
                           text="Forgot your password?"
@@ -175,21 +182,35 @@ export default function Login() {
                     </div>
 
                     <Button
-                      className="mt-4 w-full h-[50px] rounded-lg text-lg bg-green-600 hover:bg-green-700 border shadow-md hover:shadow-lg transition"
+                      className="mt-4 w-full h-[50px] rounded-lg text-lg bg-green-600 hover:bg-green-700  border shadow-md hover:shadow-lg transition"
                       type="submit"
                     >
-                      <LockKeyhole className="mr-2" />
+                      <LockKeyhole />
                       <TextCompoment text="Login" className="text-white font-serif" />
                     </Button>
+
+
                   </Form>
+
                 )}
               </Formik>
+              {/* <div className="mt-5">
+                <span className="text-gray-600">
+                  Don&apos;t have an account?{" "}
+                </span>
+                <button
+                  onClick={() => router.push("/register")}
+                  className="text-green-600 hover:text-green-500 font-serif"
+                >
+                  Sign up
+                </button>
+              </div> */}
             </CardContent>
           </Card>
         </div>
       </div>
+                <Footer />
 
-      <Footer />
     </div>
   );
 }
