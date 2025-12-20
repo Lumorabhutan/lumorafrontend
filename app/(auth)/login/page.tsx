@@ -67,7 +67,7 @@ export default function Login() {
           progress: true,
         }
       );
-      const { accessToken, refreshToken } = response.data.data;
+      const { accessToken, refreshToken } = response.data;
 
       localStorage.setItem("accessToken", accessToken);
       localStorage.setItem("refreshToken", refreshToken)
