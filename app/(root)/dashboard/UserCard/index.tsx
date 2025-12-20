@@ -153,12 +153,12 @@ export default function UserCard() {
           />
 
           {/* Create Button - Only if permitted */}
-          {hasPermission("user:create") && (
+          {/* {hasPermission("user:create") && ( */}
             <Button onClick={openCreateDrawer} className="dark:bg-gray-700 dark:hover:bg-gray-600">
               <Plus className="mr-2 h-4 w-4" />
               Add User
             </Button>
-          )}
+          {/* )} */}
         </div>
 
         {/* Table */}
