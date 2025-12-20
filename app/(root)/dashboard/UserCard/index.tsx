@@ -153,12 +153,12 @@ export default function UserCard() {
           />
 
           {/* Create Button - Only if permitted */}
-          {/* {hasPermission("user:create") && ( */}
+          {hasPermission("user:create") && (
             <Button onClick={openCreateDrawer} className="dark:bg-gray-700 dark:hover:bg-gray-600">
               <Plus className="mr-2 h-4 w-4" />
               Add User
             </Button>
-          {/* )} */}
+         )}
         </div>
 
         {/* Table */}
@@ -222,7 +222,7 @@ export default function UserCard() {
 
                   {/* Actions - Permission-based */}
                   <TableCell className="flex gap-2 justify-end">
-                    {/* {hasPermission("user:update") && ( */}
+                    {hasPermission("user:update") && (
                       <Button
                         size="sm"
                         variant="outline"
@@ -231,7 +231,7 @@ export default function UserCard() {
                       >
                         <Edit size={16} />
                       </Button>
-                    {/* )} */}
+                    )} 
 
                     {hasPermission("user:delete") && (
                       <Button
