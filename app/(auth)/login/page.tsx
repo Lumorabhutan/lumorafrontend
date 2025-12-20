@@ -52,7 +52,8 @@ export default function Login() {
         getApiEndpoint.login(),
         values
       );
-
+       const token = Cookies.get("accessToken");
+       console.log("Login response token:", token);
       // Destructure tokens directly from root
       const { accessToken, refreshToken, message } = response.data;
 
@@ -64,9 +65,8 @@ export default function Login() {
         return;
       }
 
-      // Optional: save refresh token
-      // Cookies.set("refreshToken", refreshToken, { expires: 30, secure: true, sameSite: "strict" });
-
+      // Store tokens in cookies
+ 
       // Success message
       showToast.success(message || "Login successful!", {
         duration: 4000,
