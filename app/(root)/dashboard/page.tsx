@@ -40,6 +40,7 @@ export default function DashboardPage() {
     const token = Cookies.get("accessToken");
 
     if (!token) {
+      console.warn("No token found");
       router.push("/"); // no token → redirect
       return;
     }
@@ -49,6 +50,8 @@ export default function DashboardPage() {
       const userRole = decoded?.role ?? null;
 
       if (!userRole) {
+
+        console.error("Role not found in token");
         router.push("/"); // invalid role → redirect
         return;
       }
@@ -61,6 +64,7 @@ export default function DashboardPage() {
 
       // Only allow admin, manager, and user → stay on dashboard
       if (["admin", "manager", "user"].includes(normalizedRole)) {
+        console.log("Role is valid:", userRole);
         router.push("/dashboard"); // e.g., client or unknown role → redirect home
         return;
       }
