@@ -12,7 +12,7 @@ export const usePermissions = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const token = Cookies.get("accessToken");
+    const token = localStorage.getItem("accessToken");
 
     if (!token) {
       setPermissions([]);
