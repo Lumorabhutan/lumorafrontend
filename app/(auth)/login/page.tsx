@@ -78,6 +78,7 @@ export default function Login() {
         const userRole = decoded?.role ?? null;
 
         if (!userRole) {
+          console.log("No role found in token");
           router.push("/"); // invalid role → redirect
           return;
         }
@@ -87,7 +88,8 @@ export default function Login() {
           return;
         }
         if(userRole.toLowerCase() === "admin" || userRole.toLowerCase() === "user" || userRole.toLowerCase() === "manager" || userRole.toLowerCase() === "accounts" ){
-            router.push("/dashboard"); // client → register
+        console.log("Valid role:", userRole);
+          router.push("/dashboard"); // client → register
           return;
         }
 

@@ -57,6 +57,13 @@ export default function DashboardPage() {
         router.push("/register"); // client → register
         return;
       }
+      const normalizedRole = userRole.toLowerCase();
+
+      // Only allow admin, manager, and user → stay on dashboard
+      if (["admin", "manager", "user"].includes(normalizedRole)) {
+        router.push("/dashboard"); // e.g., client or unknown role → redirect home
+        return;
+      }
 
       // valid admin/Manager/User → allow access
       setRole(userRole);
