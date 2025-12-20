@@ -229,7 +229,7 @@ export default function UserCard() {
                         onClick={() => handleEdit(user)}
                         className="dark:border-gray-600 dark:text-gray-300"
                       >
-                        <Edit size={16} />
+                        <Edit size={16} />  
                       </Button>
                     )} 
 

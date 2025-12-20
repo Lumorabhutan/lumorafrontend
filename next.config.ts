@@ -2,8 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-   images: {
-    domains: ['localhost'], // allow images from backend
+  images: {
+    domains: ['localhost', 'res.cloudinary.com'], // allow images from backend and Cloudinary
   },
 };
 
