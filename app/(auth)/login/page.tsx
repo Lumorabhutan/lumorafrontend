@@ -69,6 +69,8 @@ export default function Login() {
       );
       const token = Cookies.get("accessToken");
       if (!token) {
+                  console.log("No token found");
+
         router.push("/"); // no token → redirect
         return;
       }
