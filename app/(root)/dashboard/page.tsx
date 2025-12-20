@@ -41,7 +41,7 @@ export default function DashboardPage() {
 
     // Debug: Check if token exists
     if (!token) {
-      console.warn("No accessToken found in cookies");
+      console.warn("No accessToken found in cookies",token);
       router.push("/");
       return;
     }
