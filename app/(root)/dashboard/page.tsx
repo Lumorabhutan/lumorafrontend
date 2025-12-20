@@ -37,11 +37,11 @@ export default function DashboardPage() {
   const router = useRouter();
 
   useEffect(() => {
-    const token = Cookies.get("accessToken");
+    const token = localStorage.getItem("accessToken");
 
     // Debug: Check if token exists
     if (!token) {
-      console.warn("No accessToken found in cookies",token);
+      console.warn("No accessToken found in localStorage", token);
       router.push("/");
       return;
     }

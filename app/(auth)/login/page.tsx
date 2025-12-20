@@ -67,16 +67,19 @@ export default function Login() {
           progress: true,
         }
       );
-      const token = Cookies.get("accessToken");
-      if (!token) {
-        console.log("No token found", token);
+      const { accessToken, refreshToken } = response.data.data;
+
+      localStorage.setItem("accessToken", accessToken);
+      localStorage.setItem("refreshToken", refreshToken)
+      if (!accessToken) {
+        console.log("No token found", accessToken);
 
         router.push("/"); // no token → redirect
         return;
-      }
+      } 
 
       try {
-        const decoded = jwtDecode<JwtPayload & { role?: string }>(token);
+        const decoded = jwtDecode<JwtPayload & { role?: string }>(accessToken);
         const userRole = decoded?.role ?? null;
 
         if (!userRole) {
@@ -89,8 +92,8 @@ export default function Login() {
           router.push("/register"); // client → register
           return;
         }
-        if(userRole.toLowerCase() === "admin" || userRole.toLowerCase() === "user" || userRole.toLowerCase() === "manager" || userRole.toLowerCase() === "accounts" ){
-        console.log("Valid role:", userRole);
+        if (userRole.toLowerCase() === "admin" || userRole.toLowerCase() === "user" || userRole.toLowerCase() === "manager" || userRole.toLowerCase() === "accounts") {
+          console.log("Valid role:", userRole);
           router.push("/dashboard"); // client → register
           return;
         }
@@ -209,7 +212,7 @@ export default function Login() {
           </Card>
         </div>
       </div>
-                <Footer />
+      <Footer />
 
     </div>
   );
