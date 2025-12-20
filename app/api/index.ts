@@ -1,5 +1,5 @@
-export const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL!;
-
+// export const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL!;
+export const apiBaseUrl = "https://travelbackend-production-10db.up.railway.app";
 export const getApiEndpoint = {
   // Auth
   login: () => `${apiBaseUrl}/login`,

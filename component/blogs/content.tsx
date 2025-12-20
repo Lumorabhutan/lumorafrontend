@@ -84,7 +84,7 @@ const BlogSection = () => {
                   unoptimized
                   onError={(e) => {
                     const target = e.currentTarget as any;
-                    target.src = "/placeholder-blog.jpg";
+                    target.src = "/Beautiful Dzong.jpg";
                   }}
                 />
               </div>
