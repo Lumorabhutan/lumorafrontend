@@ -202,11 +202,11 @@ export default function BlogCard() {
           <TableHeader>
             <TableRow className="dark:border-gray-700">
               <TableHead className="dark:text-gray-300">ID</TableHead>
-              <TableHead className="dark:text-gray-300">Title</TableHead>
+              {/* <TableHead className="dark:text-gray-300">Title</TableHead> */}
               <TableHead className="dark:text-gray-300">Category</TableHead>
-              <TableHead className="dark:text-gray-300">Content Preview</TableHead>
-              <TableHead className="dark:text-gray-300">Images</TableHead>
-              <TableHead className="dark:text-gray-300">Link</TableHead>
+              {/* <TableHead className="dark:text-gray-300">Content Preview</TableHead> */}
+              {/* <TableHead className="dark:text-gray-300">Images</TableHead> */}
+              {/* <TableHead className="dark:text-gray-300">Link</TableHead> */}
               <TableHead className="dark:text-gray-300">Status</TableHead>
               <TableHead className="dark:text-gray-300">Published Date</TableHead>
               <TableHead className="dark:text-gray-300">Actions</TableHead>
@@ -217,17 +217,16 @@ export default function BlogCard() {
               {paginatedBlogs.map((b) => (
                 <TableRow key={b.id} className="border-b dark:border-gray-700">
                   <TableCell className="dark:text-gray-200">{b.id}</TableCell>
-                  <TableCell className="dark:text-gray-200 font-medium max-w-xs truncate">
+                  {/* <TableCell className="dark:text-gray-200 font-medium max-w-xs truncate">
                     {b.title}
-                  </TableCell>
+                  </TableCell> */}
                   <TableCell className="dark:text-gray-200">{b.category || "—"}</TableCell>
-                  <TableCell className="dark:text-gray-200 max-w-sm truncate">
-                    {/* {b.content.substring(0, 50)}... */}
-                  </TableCell>
-                  <TableCell className="dark:text-gray-200">
+                  {/* <TableCell className="dark:text-gray-200 max-w-sm truncate">
+                  </TableCell> */}
+                  {/* <TableCell className="dark:text-gray-200">
                     {b.images?.length ? `${b.images.length} image(s)` : "—"}
-                  </TableCell>
-                  <TableCell className="dark:text-gray-200">
+                  </TableCell> */}
+                  {/* <TableCell className="dark:text-gray-200">
                     {b.link ? (
                       <a
                         href={b.link}
@@ -240,7 +239,7 @@ export default function BlogCard() {
                     ) : (
                       "—"
                     )}
-                  </TableCell>
+                  </TableCell> */}
                   <TableCell className="dark:text-gray-200">
                     <span
                       className={`px-2 py-1 rounded-full text-xs font-semibold ${
