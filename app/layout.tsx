@@ -1,3 +1,5 @@
+"use client"; // Needed if NavbarClient uses hooks like usePathname
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Lato } from "next/font/google";
 import "./globals.css";
@@ -38,6 +40,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Favicon for different devices and sizes */}
+        <link rel="icon" type="image/png" sizes="32x32" href="/lumora_logo.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/lumora_logo.png" />
+        <link rel="shortcut icon" href="/lumora_logo.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/lumora_logo.png" />
+
+        {/* Optional: Manifest for PWA */}
+        <link rel="manifest" href="/site.webmanifest" />
+
+        {/* JSON-LD structured data */}
         <Script
           id="organization-logo"
           type="application/ld+json"
@@ -47,8 +59,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "url": "https://lumorabhutan.com",
-              "logo": "https://lumorabhutan.com/logo.png"
-            })
+              "logo": "https://lumorabhutan.com/logo.png",
+            }),
           }}
         />
       </head>
@@ -56,8 +68,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${lato.variable} antialiased relative`}
       >
         <Providers>
-          <NavbarClient />        
-            {children}
+          <NavbarClient />
+          {children}
         </Providers>
       </body>
     </html>
