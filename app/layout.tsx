@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Lato } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/component/navbar/navbar";
 import Providers from "./Providers";
 import Script from "next/script";
-import { usePathname } from "next/navigation";
+import NavbarClient from ".";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,21 +32,9 @@ export const metadata: Metadata = {
   },
 };
 
-/* ✅ Inline Client Component */
-function ConditionalNavbar() {
-  "use client";
-  const pathname = usePathname();
-
-  if (pathname.startsWith("/dashboard")) return null;
-
-  return <Navbar />;
-}
-
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <head>
@@ -59,9 +46,9 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              url: "https://lumorabhutan.com",
-              logo: "https://lumorabhutan.com/logo.png",
-            }),
+              "url": "https://lumorabhutan.com",
+              "logo": "https://lumorabhutan.com/logo.png"
+            })
           }}
         />
       </head>
@@ -69,8 +56,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${lato.variable} antialiased relative`}
       >
         <Providers>
-          <ConditionalNavbar />
-          {children}
+          <NavbarClient />        
+            {children}
         </Providers>
       </body>
     </html>
