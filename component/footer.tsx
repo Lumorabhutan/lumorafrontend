@@ -65,8 +65,6 @@ export default function Footer() {
             <li>
               <a
                 href="/Lumora Tours and Travels Policy.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="hover:text-white"
               >
                 Travel Policy
@@ -75,8 +73,6 @@ export default function Footer() {
             <li>
               <a
                 href="/Lumora Tours & Travels_Business__License.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="hover:text-white"
               >
                 Legal Documents
