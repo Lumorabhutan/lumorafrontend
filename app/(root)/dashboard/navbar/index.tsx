@@ -61,6 +61,7 @@ export default function Navbar({
     const [showDropdown, setShowDropdown] = useState(false);
     const handleLogout = () => {
         Cookies.remove("accessToken");
+        localStorage.removeItem("accessToken");
         router.push("/");
     };
 
