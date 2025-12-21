@@ -14,7 +14,6 @@ export default function TopBar() {
             <Mail size={16} /> <span>info@lumorabhutan.com</span>
           </div>
         </div>
-    
       </div>
     </div>
   );
