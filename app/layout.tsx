@@ -1,4 +1,3 @@
-"use client"; // Needed if NavbarClient uses hooks like usePathname
 
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Lato } from "next/font/google";
