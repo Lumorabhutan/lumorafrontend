@@ -25,7 +25,7 @@ export default function TravelAgencyAbout() {
     {
       icon: Mail,
       text: "Mail",
-      href: "https://mail.google.com/mail/?view=cm&fs=1&to=ceo@bhutanbestinbound.com",
+      href: "https://mail.google.com/mail/?view=cm&fs=1&to=info@lumorabhutan.com",
       color: "#D44638", // Gmail red
     },
     {
