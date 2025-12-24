@@ -26,8 +26,8 @@ export default function TouristTalkAboutUs() {
   const plugin = useRef(Autoplay({ delay: 4000, stopOnInteraction: true }));
   const [review, setReviews] = useState();
   const [testimonials, setTestimonials] = useState([
- { name: "John Doe", email: "Venice, Italy", comment: "Our trip to Lumora Tours and Travel was amazing! Lumora Tours and Travel organized everything perfectly, from the hotels to the sightseeing spots. I was very impressed and will definitely return!", createdAt: "Jun 25 24", rating: 5 },
-]);
+    { name: "John Doe", email: "Venice, Italy", comment: "Our trip to Lumora Tours and Travel was amazing! Lumora Tours and Travel organized everything perfectly, from the hotels to the sightseeing spots. I was very impressed and will definitely return!", createdAt: "Jun 25 24", rating: 5 },
+  ]);
   // Update slidesPerView based on = viewport
   const updateSlidesPerView = useCallback(() => {
     const width = window.innerWidth;
@@ -35,7 +35,7 @@ export default function TouristTalkAboutUs() {
     else if (width < 1024) setSlidesPerView(2);
     else setSlidesPerView(3);
   }, []);
- useEffect(() => {
+  useEffect(() => {
     const fetchReviews = async () => {
       try {
         const response = await apiClient.get(getApiEndpoint.getUserReview()); // ✅ call backend API
@@ -52,19 +52,19 @@ export default function TouristTalkAboutUs() {
     return () => window.removeEventListener("resize", updateSlidesPerView);
   }, [updateSlidesPerView]);
 
-useEffect(() => {
-  if (!api) return;
+  useEffect(() => {
+    if (!api) return;
 
-  const onSelect = () => setCurrentSnap(api.selectedScrollSnap());
+    const onSelect = () => setCurrentSnap(api.selectedScrollSnap());
 
-  onSelect(); // set initial snap
-  api.on("select", onSelect);
+    onSelect(); // set initial snap
+    api.on("select", onSelect);
 
-  // Cleanup: make sure it returns void
-  return () => {
-    if (api) api.off("select", onSelect);
-  };
-}, [api]);
+    // Cleanup: make sure it returns void
+    return () => {
+      if (api) api.off("select", onSelect);
+    };
+  }, [api]);
 
   // Scroll to specific snap
   const goToSnap = (index: number) => {
@@ -128,20 +128,20 @@ useEffect(() => {
                   <div className="flex items-center justify-between mt-auto">
                     <div className="flex">{[...Array(t.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}</div>
                     {/* <Badge variant="secondary" className="bg-green-100 text-green-700 text-xs font-medium">{t.createdAt}</Badge> */}
-                    <Badge variant="secondary" className="bg-green-100 text-green-700 text-xs font-medium">
-  {new Date(t.createdAt).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  })}
-</Badge>
+                    {/* <Badge variant="secondary" className="bg-green-100 text-green-700 text-xs font-medium">
+                      {new Date(t.createdAt).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                      })}
+                    </Badge> */}
                   </div>
                 </Card>
               </CarouselItem>
             ))}
           </CarouselContent>
 
-     
+
         </Carousel>
 
         {/* Dot Indicators */}
@@ -150,9 +150,8 @@ useEffect(() => {
             <button
               key={i}
               onClick={() => goToSnap(i)}
-              className={`h-2 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-green-500 ${
-                i === currentSnap ? "bg-green-600 w-12" : "bg-gray-300 w-6 hover:bg-green-400"
-              }`}
+              className={`h-2 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-green-500 ${i === currentSnap ? "bg-green-600 w-12" : "bg-gray-300 w-6 hover:bg-green-400"
+                }`}
               aria-label={`Go to review ${i + 1}`}
             />
           ))}
