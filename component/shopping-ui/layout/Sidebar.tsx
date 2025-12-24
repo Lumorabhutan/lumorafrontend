@@ -16,6 +16,8 @@ import LumoraChoice from "../product/LumoraChoice";
 import OGOP from "../product/OGOP";
 import Snacks from "../product/Snacks";
 import TripCard from "../product/PopularProducts";
+import BhutanHerbal from "../product/BhutanHerbal";
+import GrownInBhutan from "../product/GrownInBhutan";
 
 const categories = [
   { name: "Lumora Merch", icon: Flame },
@@ -132,8 +134,8 @@ export default function SidebarLayout() {
               {selectedCategory === "Snacks" && <Snacks />}
               {selectedCategory === "Lumora Magazine" && <LumoraMagazine />}
               {selectedCategory === "Lumora Choice" && <LumoraChoice />}
-              {selectedCategory === "Bhutan Herbal" && <LumoraChoice />}
-              {selectedCategory === "Grown in Bhutan" && <LumoraChoice />}
+              {selectedCategory === "Bhutan Herbal" && <BhutanHerbal />}
+              {selectedCategory === "Grown in Bhutan" && <GrownInBhutan />}
             </div>
           </div>
         </main>

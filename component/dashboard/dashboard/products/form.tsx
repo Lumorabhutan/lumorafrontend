@@ -56,6 +56,10 @@ export function ProductDrawer({
     { title: "Snacks", value: "snacks" },
     { title: "Lumora Magazine", value: "lumora-magazine" },
     { title: "Lumora Choice", value: "lumora-choice" },
+    { title: "Bhutan Herbal", value: "bhutan-herbal" },
+
+    { title: "Growth in Bhutan", value: "growth-in-bhutan" },
+
   ];
 
   const validationSchema = Yup.object().shape({
@@ -172,9 +176,8 @@ export function ProductDrawer({
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               disabled={formik.isSubmitting}
-              className={`w-full border rounded-md px-3 py-2 ${
-                hasError("category") ? "border-red-500" : "border-gray-300"
-              }`}
+              className={`w-full border rounded-md px-3 py-2 ${hasError("category") ? "border-red-500" : "border-gray-300"
+                }`}
             >
               <option value="">Select Category</option>
               {categories.map((c) => (
