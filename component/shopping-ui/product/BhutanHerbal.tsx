@@ -42,7 +42,7 @@ function ProductCard({ product }: { product: Product }) {
   const rating = 4; // You can add this to your API
 
   return (
-    <div className="relative max-w-sm rounded-2xl overflow-hidden bg-white shadow-lg dark:bg-gray-900">
+    <div className="relative max-w-lg rounded-2xl overflow-hidden bg-white shadow-lg dark:bg-gray-900">
       {/* Image */}
       <div className="relative">
         <Image
