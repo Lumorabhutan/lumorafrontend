@@ -30,11 +30,11 @@ function ProductCard({ product }: { product: Product }) {
   const displayPrice = parseFloat(product.final_price) || 0;
   const originalPrice = parseFloat(product.original_price) || null;
   const discountPercent = parseFloat(product.discount_percent) || null;
-    const { addToCart } = useCart(); // <-- access the cart context
+  const { addToCart } = useCart(); // <-- access the cart context
 
   // Get first image from array
-  const imageSrc = product.images && product.images.length > 0 
-    ? product.images[0] 
+  const imageSrc = product.images && product.images.length > 0
+    ? product.images[0]
     : DEFAULT_IMAGE;
 
   // Mock data for demo (since your API doesn't have these fields)
@@ -65,7 +65,7 @@ function ProductCard({ product }: { product: Product }) {
         )}
 
         {/* Favorite icon */}
-        <button 
+        <button
           className="absolute top-3 right-3 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
           aria-label="Add to favorites"
         >
@@ -86,17 +86,17 @@ function ProductCard({ product }: { product: Product }) {
         {/* Duration & Location */}
         <div className="flex items-center gap-4 text-gray-500 dark:text-gray-400 text-sm mt-1">
           <div className="flex items-center gap-1">
-            <Calendar className="w-4 h-4" /> 
+            <Calendar className="w-4 h-4" />
             <span className="line-clamp-1">{product.description}</span>
           </div>
           <div className="flex items-center gap-1">
-            <MapPin className="w-4 h-4" /> 
+            <MapPin className="w-4 h-4" />
             <span>{location}</span>
           </div>
         </div>
 
         {/* Star rating */}
-      
+
 
         {/* Price */}
         <div className="flex items-center justify-between mt-2">
@@ -112,11 +112,11 @@ function ProductCard({ product }: { product: Product }) {
           </div>
 
           <Button className="bg-green-500 hover:bg-green-600 rounded-full p-3" onClick={() => addToCart({
-              ...product,
-              quantity: 1,
-              stock_quantity: 10,
-            })}>
-           Add To Card
+            ...product,
+            quantity: 1,
+            stock_quantity: 10,
+          })}>
+            Add To Card
           </Button>
         </div>
       </div>
@@ -136,12 +136,12 @@ export default function PopularProducts() {
         setLoading(true);
         setError(null);
         const response = await apiClient.get(getApiEndpoint.getproduct("bhutan-herbal"));
-        
+
         // Ensure we have an array
-        const productsData = Array.isArray(response.data.data) 
-          ? response.data.data 
+        const productsData = Array.isArray(response.data.data)
+          ? response.data.data
           : [response.data.data];
-        
+
         setProducts(productsData);
       } catch (err) {
         console.error("Error fetching products:", err);
@@ -180,13 +180,13 @@ export default function PopularProducts() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-        <LumoraTravelBanner 
-                      destinations={customDestinations}
-                      quickDeals={customDeals}
-                      companyName="Lumora Tour & Travel"
-                      tagline="Discover your next adventure with exclusive deals"
-                      autoSlideInterval={5000}
-                    />
+      <LumoraTravelBanner
+        destinations={customDestinations}
+        quickDeals={customDeals}
+        companyName="Lumora Tour & Travel"
+        tagline="Discover your next adventure with exclusive deals"
+        autoSlideInterval={5000}
+      />
       <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
         Popular Products
       </h2>
