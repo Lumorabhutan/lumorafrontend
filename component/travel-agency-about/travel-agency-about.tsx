@@ -13,12 +13,10 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { useRouter } from "next/navigation";
-
-export default function TravelAgencyAbout() {
-  const ContactUsData = [
+ export  const ContactUsData = [
     {
       icon: Phone,
-      text: "+975 17 94 98 27",
+      text: "+975-77893346",
       href: "#",
       color: "#34D399", // green for phone (optional)
     },
@@ -53,6 +51,8 @@ export default function TravelAgencyAbout() {
       color: "#EA4335", // Google Maps red
     },
   ];
+export default function TravelAgencyAbout() {
+
 
   const container = {
     hidden: { opacity: 0 },

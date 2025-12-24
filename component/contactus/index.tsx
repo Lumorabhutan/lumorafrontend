@@ -16,52 +16,10 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 import ContactUsForm from "./form";
+import { ContactUsData } from "../travel-agency-about/travel-agency-about";
 
 export default function TravelContactUS() {
-    const ContactUsData = [
-        {
-            // icon: Phone,
-            text: "+975 77 89 33 46",
-            href: "tel:+975 77 89 33 46",
-            color: "#34D399", // green for phone (optional)
-            src:"/telephone.png"
-        },
-        {
-            // icon: Mail,
-            text: "Mail",
-            href: "info@lumorabhutan.com",
-            color: "#D44638", // Gmail red
-            src:"/gmail.png"
-        },
-        {
-            // icon: Facebook,
-            text: "Facebook",
-            href: "https://www.facebook.com/profile.php?id=61580366382758",
-            color: "#1877F2", // Facebook blue
-            src: "/facebook.png",
-        },
-        {
-            // icon: Instagram,
-            text: "Instagram",
-            href: "https://instagram.com/bhutanbestinbound",
-            color: "#E4405F", // Instagram pinkish
-            src: "/instagram.png",
-        },
-        {
-            // icon: Linkedin,
-            text: "Linkedin",
-            href: "https://linkedin.com/company/bhutanbestinbound",
-            color: "#0A66C2", // LinkedIn blue
-            src: "/linkedin.png"
-        },
-        {
-            // icon: MapPin,
-            text: "Place",
-            href: "https://maps.google.com/?q=Thimphu+Bhutan",
-            color: "#EA4335", // Google Maps red
-            src:"/location.png"
-        },
-    ];
+
 
     const container = {
         hidden: { opacity: 0 },
@@ -140,7 +98,7 @@ We are waiting for your message/call 😊                    </p>
                         className="grid grid-cols-2 md:grid-cols-2 gap-x-10 gap-y-5 mt-10 justify-center items-center md:ml-16 "
                     >
                         {ContactUsData.map((reason, index) => {
-                            // const Icon = reason.icon;
+                            const Icon = reason.icon;
                             return (
                                 <motion.a
                                     key={index}
@@ -156,14 +114,11 @@ We are waiting for your message/call 😊                    </p>
                                             style={{ color: reason.color }}
                                         />
                                     )} */}
-                                    {reason.src && (
-                                        <Image
-                                            src={reason.src}
-                                            width={40}
-                                            height={40}
-                                            alt="Social Icon"
-                                            className="object-contain"
-                                        />
+                                    {reason && (
+                                        <Icon
+                    className="w-7 h-7 flex-shrink-0"
+                    style={{ color: reason.color }}
+                  />
                                     )}
                                     <p className="text-gray-600 font-serif text-base leading-snug">
                                         {reason.text}
