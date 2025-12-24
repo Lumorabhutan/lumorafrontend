@@ -209,7 +209,7 @@ const PlacesToTravelOptions: React.FC<TravelingtoPlacesProps> = ({ data }) => {
                       <span className="text-lg font-bold text-gray-900">
                         ${details.finalPrice}
                       </span>
-                      {details.originalPrice && (
+                      {details.discountPercent !=0 && (
                         <span className="text-sm text-gray-400 line-through">
                           ${details.originalPrice}
                         </span>
