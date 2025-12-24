@@ -182,7 +182,7 @@ export default function PopularProducts() {
     <div className="container mx-auto px-4 py-8">
         <LumoraTravelBanner 
                       destinations={customDestinations}
-                      quickDeals={customDeals}
+                      quickDeals={  customDeals as any}
                       companyName="Lumora Tour & Travel"
                       tagline="Discover your next adventure with exclusive deals"
                       autoSlideInterval={5000}

@@ -36,8 +36,7 @@ export const customDeals = [
     title: "Himalayan Explorer",
     subtitle: "Paro & Thimphu Tour",
     days: "5 Days / 4 Nights",
-    price: "$899",
-    originalPrice: "$1,199",
+
     icon: Mountain,
     color: "bg-orange-50"
   },
@@ -45,8 +44,7 @@ export const customDeals = [
     title: "Cultural Journey",
     subtitle: "Complete Bhutan Package",
     days: "8 Days / 7 Nights",
-    price: "$1,499",
-    originalPrice: "$1,999",
+   
     icon: Plane,
     color: "bg-blue-50"
   }
