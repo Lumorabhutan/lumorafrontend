@@ -165,14 +165,7 @@ export function LumoraTravelBanner({
                         <Calendar className="w-4 h-4 text-gray-500" />
                         <span className="text-xs text-gray-600">{deal.days}</span>
                       </div>
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-2xl font-bold text-blue-600">
-                          {deal.price}
-                        </span>
-                        <span className="text-sm text-gray-400 line-through">
-                          {deal.originalPrice}
-                        </span>
-                      </div>
+                   
                     </div>
                     <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
                       <IconComponent className="w-10 h-10 text-blue-600" />
