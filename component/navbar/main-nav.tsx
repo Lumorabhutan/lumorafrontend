@@ -39,7 +39,7 @@ export default function MainNav() {
             <h1 className="text-base font-sans sm:text-xl md:text-xl lg:text-xl text-gray-800 ml-[-10px] leading-none font-bold">
               {/* Lumora Tours and Travel */}
               <Image
-                src="/lumora_logo-1.png"
+                src="/Lumora.png"
                 alt="Lumora Logo"
                 width={300}
                 height={150}
@@ -72,19 +72,23 @@ export default function MainNav() {
         </div>
 
         {/* Icons */}
-        <div className="flex lg:flex items-center gap-7 justify-around mr-20">
-          <div
-            className="hidden md:block relative bg-gradient-to-r from-green-500 to-green-700 
+        <div className="flex lg:flex items-center gap-7 justify-around mr-3">
+          {cartItems.length > 0 && (
+            <div
+              className=" md:block relative bg-gradient-to-r from-green-500 to-green-700 
               rounded-full p-2 text-white cursor-pointer hover:from-green-600 hover:to-green-800 transition"
-            onClick={() => router.push("/add-to-card")}
-          >
-            <ShoppingBag className="text-gray-200" />
-            {cartItems.length > 0 && (
-              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-2">
-                {cartItems.length}
-              </span>
-            )}
-          </div>
+              onClick={() => router.push("/add-to-cart-booking")}
+            >
+              <ShoppingBag className="text-gray-200" />
+              {cartItems.length > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-2">
+                  {cartItems.length}
+                </span>
+
+              )}
+            </div>
+          )}
+
 
           <div
             className="bg-gradient-to-r from-green-500 to-green-700 rounded-full p-2 text-white cursor-pointer hover:from-green-600 hover:to-green-800 transition"

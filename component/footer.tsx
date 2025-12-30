@@ -97,7 +97,7 @@ export default function Footer() {
               { src: "/facebook.png", link: "https://www.facebook.com/profile.php?id=61580366382758" },
               { src: "/linkedin.png", link: "https://www.linkedin.com/in/lumora-tours-and-travels-b0b535380" },
 
-              // { src: "/twitter.png", link: "https://twitter.com/yourprofile" },
+              { src: "/youtube.png", link: " https://www.youtube.com/@LumoraBhutan" },
               { src: "/tik-tok.png", link: "https://www.tiktok.com/@lumora.bhutan?lang=en" },
               // { src: "/pinterest.png", link: "https://www.pinterest.com/yourprofile" }
             ].map((item, i) => (

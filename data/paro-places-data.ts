@@ -16,14 +16,14 @@ export const culturalData = [
   // …more days
 ];
 export const tourInfo = [
-  { icon: Ticket, typename: "Tour code", value: "NONE" },
-  { icon: MapPin, typename: "Start", value: "Paro Town" },
-  { icon: MapPinHouse, typename: "End", value: "Thimphu City" },
+  { icon: Ticket, typename: "Tour package", value: "Customizable" },
+  // { icon: MapPin, typename: "Start", value: "Paro Town" },
+  // { icon: MapPinHouse, typename: "End", value: "Thimphu City" },
   { icon: Users, typename: "Type tour", value: "All tour" },
   { icon: Clock, typename: "Age range", value: "Any" },
   { icon: BookOpen, typename: "Language", value: "English" },
-  { icon: DollarSign, typename: "Payments", value: "25% Pay" },
-  { icon: Ban, typename: "Cancel tour", value: "Yes/Free" },
+  { icon: DollarSign, typename: "Booking Advance", value: "40-50% Pay" },
+  { icon: Ban, typename: "Price", value: "Negotiable" },
 ];
 
 export const defaultItems = [

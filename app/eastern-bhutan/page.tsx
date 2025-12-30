@@ -133,37 +133,19 @@ Overnight in Samdrup Jongkhar
             videoUrl: "",
             content: `
       After breakfast, complete border formalities at Samdrup Jongkhar and transfer to Guwahati Airport for onward flights. Depart Bhutan with lasting memories of pristine valleys, artisan villages, and rich eastern Bhutanese culture.
-Until Next Time:
+ `,
+        },
+        {
+            dayNumber: " ",
+            title: "Until Next Time",
+            subtitle: "",
+        
+            videoUrl: "",
+            content: `
 As you bid farewell to Bhutan, carry with you the serenity of its valleys, the warmth of its people, and the timeless beauty of its mountains and monasteries. Though your journey may end for now, the memories and experiences you've gathered will linger, calling you back to the Land of Thunder Dragon soon!
     `,
         },
-        {
-            dayNumber: "Tour Information",
-            title: "Why Choose This Tour & Tour Details",
-            subtitle: "",
 
-            videoUrl: "",
-            content: `
-      ✨ Why Choose This Tour?<br/>
-
-This tour is designed for travelers who want more than sightseeing. It creates space for genuine human connection, meaningful cultural experiences, and a deeper appreciation of Bhutan's way of life. From intimate homestays to hands-on village activities, every moment offers insight into the traditions that define Bhutan.
-
-<br/>🏷️ Tour Style <br/>
-Standard / Comfort<br/>
-Thoughtfully curated accommodations, comfortable transportation, and authentic cultural experiences designed for meaningful, mindful travel.
-<br/>📌 Year-Round Availability<br/>
-Spring (March–May): Blooming landscapes, ideal weather<br/>
-Winter (December–February): Crisp air, peaceful villages, fewer tourists<br/>
-
-📞 Bookings & Enquiries (CTA Button)<br/>
-
-Cost Disclaimer<br/>
-Please note that the tour package cost does not include:<br/>
-	1) Flight tickets to Guwahati, India, or within Bhutan <br/>
-	2) Accommodation or meals in India outside the planned schedule <br/>
-	3) Personal expenses, shopping, or optional activities not included in the itinerary
-    `,
-        },
     ];
 
 
@@ -217,9 +199,9 @@ Please note that the tour package cost does not include:<br/>
                     </div>
                 </div>
             </section>
- <div className=" bg-[#EAEDF0] pt-3 pb-10">
-        <PolicyPage />
-      </div>
+            <div className=" bg-[#EAEDF0] pt-3 pb-10">
+                <PolicyPage />
+            </div>
             <div>
                 <HeroVideoSection
                     title="Start Exploring"

@@ -117,9 +117,16 @@ Optional Add-On: Haa Valley or Gasa Hot Spring
       rightImage: "/Yellow Field.jpg",
       videoUrl: "",
       content: `
-      After a leisurely breakfast, you will be transferred to Paro International Airport for your onward journey. Depart with cherished memories of a serene and romantic honeymoon in Bhutan.
+      After a leisurely breakfast, you will be transferred to Paro International Airport for your onward journey. Depart with cherished memories of a serene and romantic honeymoon in Bhutan. `,
+    },
+     {
+      dayNumber: "",
+      title: "Until Next Time",
+      subtitle: "",
+   
+      videoUrl: "",
+      content: `
 
-Until Next Time:
 As you bid farewell to Bhutan, carry with you the serenity of its valleys, the warmth of its people, and the timeless beauty of its mountains and monasteries. Though your journey may end for now, the memories and experiences you've gathered will linger, calling you back to the Land of Thunder Dragon soon!
     `,
     },

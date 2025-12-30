@@ -15,7 +15,7 @@ interface CheckoutDialogProps {
   open: boolean;
   onClose: () => void;
   subtotal: number;
-  total: string;
+  total: number;
 }
 
 export default function CheckoutDialog({ open, onClose, subtotal, total }: CheckoutDialogProps) {

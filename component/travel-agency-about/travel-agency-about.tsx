@@ -35,7 +35,7 @@ import { useRouter } from "next/navigation";
     {
       icon: Instagram,
       text: "Instagram",
-      href: "https://instagram.com/bhutanbestinbound",
+      href: "https://www.instagram.com/lumorabhutan",
       color: "#E4405F", // Instagram pinkish
     },
     {

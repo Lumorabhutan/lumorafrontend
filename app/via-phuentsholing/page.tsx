@@ -150,18 +150,22 @@ const itinerary = [
       Transfer to Paro International Airport for your onward journey or drive back to Phuentsholing 
       if exiting by road.<br/>
 
-      <strong>Until Next Time:</strong><br/>
+ 
+    `,
+  },
+    {
+    dayNumber: "",
+    title: "Until Next Time",
+    subtitle: "",
+  
+    content: `
+     
+
       As you bid farewell to Bhutan, carry with you the serenity of its valleys, the warmth of its people, 
       and the timeless beauty of its mountains and monasteries.<br/>
 
       Though your journey may end for now, the memories and experiences will linger, 
-      calling you back to the Land of Thunder Dragon soon!<br/>
-
-      <strong>Tour Style:</strong> Standard / Comfort — accommodations, comfortable transport & authentic experiences.<br/>
-      <strong>Year-Round Availability:</strong><br/>
-      • Spring (Mar–May): Blooming landscapes<br/>
-      • Autumn (Sep–Nov): Clear skies<br/>
-      • Winter (Dec–Feb): Fewer tourists<br/><br/>
+      calling you back to the Land of Thunder Dragon soon!
     `,
   },
 ];

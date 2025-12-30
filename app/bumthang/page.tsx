@@ -123,8 +123,6 @@ export default function CultureMain() {
     content: `
       After breakfast, transfer to Paro International Airport for your onward journey.
       Our Lumora Bhutan team will bid you farewell, wishing you safe travels and fond memories of Bhutan’s spiritual heart.
-      Until Next Time:
-      As you bid farewell to Bhutan, carry with you the serenity of its valleys, the warmth of its people, and the timeless beauty of its mountains and monasteries. Though your journey may end for now, the memories and experiences you’ve gathered will linger, calling you back to the Land of Thunder Dragon soon!
     `,
   }, {
     dayNumber: "",

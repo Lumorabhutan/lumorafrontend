@@ -123,9 +123,17 @@ const itinerary = [
       After breakfast, transfer to Paro International Airport. 
       Enjoy last views of valleys, rivers & mountain landscapes.<br/>
 
-      Depart Bhutan with memories of vibrant festivals, serene valleys, and rich cultural experiences.<br/>
+      Depart Bhutan with memories of vibrant festivals, serene valleys, and rich cultural experiences.
+    `,
+  },
+   {
+    dayNumber: "",
+    title: "Until Next Time",
+    subtitle: "",
+ 
+    content: `
 
-      <strong>Until Next Time:</strong><br/>
+ 
       As you bid farewell to Bhutan, carry with you the serenity of its valleys, 
       the warmth of its people, and the timeless beauty of its mountains and monasteries.<br/>
 

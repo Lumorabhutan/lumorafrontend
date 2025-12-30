@@ -8,7 +8,6 @@ export default function HomePage() {
 
       <div className="grid md:gap-10 md:p-8">
         <SidebarLayout />
-        
       </div>
     </div>
   );

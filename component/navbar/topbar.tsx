@@ -7,7 +7,7 @@ export default function TopBar() {
   const contacts = [
     {
       icon: <Phone size={16} />,
-      value: "+975-77893346",
+      value: "+97577893346",
       label: "Phone number copied successfully!",
     },
     {

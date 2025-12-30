@@ -110,8 +110,16 @@ const itinerary = [
     videoUrl: "",
     content: `
       After breakfast, make your way back to Paro, passing through familiar valleys and villages. Depending on your flight schedule, you may enjoy one final village stop. Your guide will then accompany you to the airport for departure, marking the end of your heartfelt journey through Bhutan's rural landscapes.<br/><br/>
+    `,
+  },
+   {
+    dayNumber: "",
+    title: "Until Next Time",
+    subtitle: "",
+   
+    videoUrl: "",
+    content: `
 
-      <strong>Until Next Time:</strong><br/>
       As you bid farewell to Bhutan, carry with you the serenity of its valleys, the warmth of its people, and the timeless beauty of its mountains and monasteries. Though your journey may end for now, the memories and experiences you've gathered will linger, calling you back to the Land of Thunder Dragon soon!
     `,
   },

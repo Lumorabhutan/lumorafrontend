@@ -112,9 +112,9 @@ const ArtCarousel = () => {
                                 
                                 {/* Text Section */}
                                 <div className="md:w-1/2 space-y-6">
-                                    <span className="px-3 py-1 bg-green-600 text-white text-sm rounded-xl">
+                                    {/* <span className="px-3 py-1 bg-green-600 text-white text-sm rounded-xl">
                                         {slide.category}
-                                    </span>
+                                    </span> */}
 
                                     <h2 className="text-4xl md:text-5xl font-semibold text-gray-900">
                                         {slide.title}

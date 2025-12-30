@@ -136,8 +136,16 @@ const itinerary = [
     leftImages: [],
     rightImage: "",
     content: `
-      After breakfast, drive to Paro for your departure flight. Bid farewell to Bhutan with beautiful memories of alpine lakes, peaceful landscapes, and a truly unforgettable trekking experience.<br/><br/>
-      Until Next Time:<br/>
+      After breakfast, drive to Paro for your departure flight. Bid farewell to Bhutan with beautiful memories of alpine lakes, peaceful landscapes, and a truly unforgettable trekking experience.
+      `,
+  },
+   {
+    dayNumber: "",
+    title: "Until Next Time",
+    subtitle: "",
+    leftImages: [],
+    rightImage: "",
+    content: `
       As you bid farewell to Bhutan, carry with you the serenity of its valleys, the warmth of its people, and the timeless beauty of its mountains and monasteries. 
       Though your journey may end for now, the memories and experiences you’ve gathered will linger, calling you back to the Land of Thunder Dragon soon!
     `,

@@ -105,12 +105,18 @@ export default function CultureMain() {
       <strong>Departure from Bhutan:</strong><br/>
       Begin your final day with a check-in at Paro International Airport, completing airport formalities with ease. As you await your flight, take a quiet moment to reflect on the enchanting experiences, vibrant culture, and serene landscapes that have made your Bhutan journey unforgettable.<br/>
       When boarding is announced, proceed to your gate and settle in for departure. As your plane ascends over the majestic Himalayas, savor one last panoramic view of Bhutan’s pristine valleys and cliffside monasteries—a breathtaking farewell to the Land of the Thunder Dragon.<br/><br/>
-
-      <strong>Until Next Time:</strong><br/>
+ `,
+  },
+    {
+    dayNumber: " ",
+    title:"Until Next Time",
+    subtitle: "",
+ 
+    content: `
+   
       As you bid farewell to Bhutan, carry with you the serenity of its valleys, the warmth of its people, and the timeless beauty of its mountains and monasteries. Though your journey may end for now, the memories and experiences you’ve gathered will linger, calling you back to the Land of the Thunder Dragon.<br/><br/>
     `,
   },
-  
 ];
 
 

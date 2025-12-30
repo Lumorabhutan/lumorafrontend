@@ -51,6 +51,7 @@ export const getApiEndpoint = {
   getproduct: (search?: string) =>
     `${apiBaseUrl}/products${search ? `?search=${encodeURIComponent(search)}` : ""}`,
   createproduct: () => `${apiBaseUrl}/products`,
+  getProductById:(id: number) => `${apiBaseUrl}/products/${id}`,
   updateproduct: (id: number | undefined) => `${apiBaseUrl}/products/${id}`,
   deleteproduct: (id: number) => `${apiBaseUrl}/products/${id}`,
 

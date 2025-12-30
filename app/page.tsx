@@ -12,7 +12,6 @@ import TripsForFistTimer from "./pages/trips-for-first-timer";
 import image1 from "@/public/bhutan-thimphu-city.jpg";
 import TouristTalkAboutUs from "@/component/tourist-talk-aboutus";
 import AdventureTypes from "@/component/advanture";
-import Calender from "@/component/Calender";
 
 export default function Home() {
   // ✅ Correct type: Tour[]
@@ -22,7 +21,6 @@ export default function Home() {
     <main className="overflow-hidden">
       <HomePage />
       <AboutUs />
-
       {/* Pass array of tours */}
       <ToursSection
         tours={toursOptionals}
@@ -38,7 +36,6 @@ export default function Home() {
         video={true}
       />
       <TouristTalkAboutUs />
-      <Calender />
       <Footer />
     </main>
   );

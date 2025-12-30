@@ -33,7 +33,6 @@ const itinerary = [
     ],
     rightImage: "/bird11.jpg",
     content: `
-
       Arrive at Paro International Airport and transfer to Thimphu.<br/>
       Depending on arrival time, enjoy a warm-up birding walk along the riverbanks, where you may spot:<br/>
       • Ibisbill<br/>

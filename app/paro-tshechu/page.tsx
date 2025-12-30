@@ -96,58 +96,19 @@ export default function CultureMain() {
       Begin your final day with a check-in at Paro International Airport, completing airport formalities with ease. As you await your flight, take a quiet moment to reflect on the enchanting experiences, vibrant culture, and serene landscapes that have made your Bhutan journey unforgettable.<br/>
       When boarding is announced, proceed to your gate and settle in for departure. As your plane ascends over the majestic Himalayas, savor one last panoramic view of Bhutan’s pristine valleys and cliffside monasteries—a breathtaking farewell to the Land of the Thunder Dragon.<br/><br/>
 
-      <strong>Until Next Time:</strong><br/>
-      As you bid farewell to Bhutan, carry with you the serenity of its valleys, the warmth of its people, and the timeless beauty of its mountains and monasteries. Though your journey may end for now, the memories and experiences you’ve gathered will linger, calling you back.
-    `,
+   `,
   },
-  {
-    dayNumber: "Tour Inclusions & Exclusions",
-    title: "Tour Inclusions, Exclusions, Visa & Documents",
+   {
+    dayNumber: "",
+    title: "Until Next Time",
     subtitle: "",
-    leftImages: [],
-    rightImage: "",
+   
     videoUrl: "",
     content: `
-      <strong>Tour Inclusion:</strong><br/>
-      Arrival and Departure: All airport and hotel transfers, as well as ground transportation throughout the trip, are provided in a comfortable private vehicle.<br/>
-      Accommodation: Stay in comfortable twin/double sharing lodging throughout your Bhutan tour, carefully selected to ensure a relaxing and enjoyable experience.<br/>
-      Sightseeing Fees & Visa: Sustainable Development Fee (SDF), all entrance fees to museums, monuments, and heritage sites are included, along with your Bhutanese Tourist Visa.<br/>
-      Meals: Enjoy full-board meals throughout your journey, including breakfast, lunch, dinner, tea, and snacks.<br/>
-      Transportation: All ground transportation during the tour will be in a comfortable private vehicle, as outlined in the itinerary.<br/>
-      Guide: Benefit from the expertise of a licensed, professional English-speaking Bhutanese guide who is friendly, knowledgeable, and dedicated to enhancing your travel experience.<br/>
-      Water: Mineral drinking water is provided during all tour activities.<br/>
-      Government Taxes: All applicable government taxes and official expenses are included in your package.<br/><br/>
-
-      <strong>Tour Exclusions:</strong><br/>
-      International Airfare: Flights to and from Bhutan are not included in the package. However, Lumora Tours and Travels will assist you in booking the flights to and from Bhutan.<br/>
-      Travel Insurance: Personal travel, medical, or accident insurance is not included.<br/>
-      Personal Expenses: Items such as souvenirs, laundry, phone calls, or personal purchases are not covered.<br/>
-      Optional Activities: Any optional excursions, activities, or experiences not mentioned in the itinerary are at your own cost.<br/>
-      Tips & Gratuities: Tips for guides, drivers, hotel staff, and porters are not included and are left to your discretion.<br/>
-      Alcoholic & Special Beverages: Alcoholic drinks and beverages beyond standard tea, coffee, and water are not included.<br/>
-      Visa & Permit for Non-Standard Entry: Any special permits required outside the standard Bhutanese Tourist Visa are not included.<br/><br/>
-
-      <strong>Visa Requirement:</strong><br/>
-      Lumora Tours and Travels will assist in arranging all visa and e-permit applications for international visitors. A single-entry visa (USD 40) must be obtained before arrival and presented at the Point of Entry in Bhutan.<br/>
-      All tourists, except those from India, Bangladesh, and the Maldives, require a visa to enter Bhutan. Indian visitors need a permit, while nationals of Bangladesh and the Maldives are eligible for a visa on arrival.<br/>
-      Tourists paying in US Dollars are eligible for a 50% discount on the standard SDF of USD 200, reducing it to USD 100 per person per day. This discount also applies to children aged 6–11 years paying in US Dollars. Additionally, the 24-hour SDF waiver for visitors staying in border towns remains in effect.<br/>
-      Visitors can obtain their visa clearance or permit online through the Department of Immigration, or they can rely on Lumora Tours and Travels to handle all travel documents and organize their Bhutan trip seamlessly.<br/>
-      All tourists must travel via a pre-booked tour package, to this end, the Lumora Tours and Travels ensure all paperwork is handled smoothly so you can enjoy your Bhutan journey hassle-free.<br/><br/>
-
-      <strong>Document Required:</strong><br/>
-      A digital copy of a valid passport with at least six months of validity beyond your departure date from Bhutan.<br/>
-      A recent digital passport photo.<br/>
-      Arrival and departure dates.<br/>
-      Valid travel insurance for the duration of your travel.<br/>
-      Sustainable Development Fee (SDF) of USD100 per night per adult and USD50 for children aged 5 to 12 years old. For children below 5 years, the SDF is waived.<br/>
-      A one-time visa application fee of USD40.<br/><br/>
-      Lumora Tours and Travels will be pleased to process your Bhutan visa upon receiving the required documents and applicable fees.
+         As you bid farewell to Bhutan, carry with you the serenity of its valleys, the warmth of its people, and the timeless beauty of its mountains and monasteries. Though your journey may end for now, the memories and experiences you’ve gathered will linger, calling you back.
     `,
   },
 ];
-
-
-
 
 
   return (

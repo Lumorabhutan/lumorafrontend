@@ -116,7 +116,16 @@ export default function CultureMain() {
       content: `
       After breakfast, your guide will accompany you to Paro International Airport for your departure. 
       With a heartfelt Tashi Delek, bid farewell to Bhutan and carry home beautiful memories of culture, nature, and warm Bhutanese hospitality.<br/><br/>
-     <strong> Until Next Time</strong><br/>
+    Though your journey may end for now, the memories and experiences you’ve gathered will linger, calling you back to the Land of Thunder Dragon soon!
+    `,
+    },
+    {
+      dayNumber: "",
+      title: "Until Next Time",
+      subtitle: "",
+      leftImages: [],
+      rightImage: "",
+      content: `
       As you bid farewell to Bhutan, carry with you the serenity of its valleys, the warmth of its people, and the timeless beauty of its mountains and monasteries. 
       Though your journey may end for now, the memories and experiences you’ve gathered will linger, calling you back to the Land of Thunder Dragon soon!
     `,

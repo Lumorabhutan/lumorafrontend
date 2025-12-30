@@ -144,37 +144,17 @@ export default function CultureMain() {
       <strong>Departure from Bhutan:</strong><br/>
       Begin your final day with a check-in at Paro International Airport, completing airport formalities with ease. As you await your flight, take a quiet moment to reflect on the enchanting experiences, vibrant culture, and serene landscapes that have made your Bhutan journey unforgettable.<br/>
       When boarding is announced, proceed to your gate and settle in for departure. As your plane ascends over the majestic Himalayas, savor one last panoramic view of Bhutan’s pristine valleys and cliffside monasteries—a breathtaking farewell to the Land of the Thunder Dragon.<br/><br/>
-
-      <strong>Until Next Time:</strong><br/>
-      As you bid farewell to Bhutan, carry with you the serenity of its valleys, the warmth of its people, and the timeless beauty of its mountains and monasteries. Though your journey may end for now, the memories and experiences you’ve gathered will linger, calling you back.
-    `,
+   `,
   },
   {
-    dayNumber: "Tour Inclusions & Exclusions",
-    title: "Tour Inclusions & Exclusions",
-    subtitle: "",
-    leftImages: [],
-    rightImage: "",
+    dayNumber: "",
+    title: "Until Next Time",
+    subtitle: "Farewell to Bhutan",
+
     videoUrl: "",
     content: `
-      <strong>Tour Inclusion:</strong><br/>
-      Arrival and Departure: All airport and hotel transfers, as well as ground transportation throughout the trip, are provided in a comfortable private vehicle.<br/>
-      Accommodation: Stay in comfortable twin/double sharing lodging throughout your Bhutan tour, carefully selected to ensure a relaxing and enjoyable experience.<br/>
-      Sightseeing Fees & Visa: Sustainable Development Fee (SDF), all entrance fees to museums, monuments, and heritage sites are included, along with your Bhutanese Tourist Visa.<br/>
-      Meals: Enjoy full-board meals throughout your journey, including breakfast, lunch, dinner, tea, and snacks.<br/>
-      Transportation: All ground transportation during the tour will be in a comfortable private vehicle, as outlined in the itinerary.<br/>
-      Guide: Benefit from the expertise of a licensed, professional English-speaking Bhutanese guide who is friendly, knowledgeable, and dedicated to enhancing your travel experience.<br/>
-      Water: Mineral drinking water is provided during all tour activities.<br/>
-      Government Taxes: All applicable government taxes and official expenses are included in your package.<br/><br/>
 
-      <strong>Tour Exclusions:</strong><br/>
-      International Airfare: Flights to and from Bhutan are not included in the package. However, Lumora Tours and Travels will assist you in booking the flights to and from Bhutan.<br/>
-      Travel Insurance: Personal travel, medical, or accident insurance is not included.<br/>
-      Personal Expenses: Items such as souvenirs, laundry, phone calls, or personal purchases are not covered.<br/>
-      Optional Activities: Any optional excursions, activities, or experiences not mentioned in the itinerary are at your own cost.<br/>
-      Tips & Gratuities: Tips for guides, drivers, hotel staff, and porters are not included and are left to your discretion.<br/>
-      Alcoholic & Special Beverages: Alcoholic drinks and beverages beyond standard tea, coffee, and water are not included.<br/>
-      Visa & Permit for Non-Standard Entry: Any special permits required outside the standard Bhutanese Tourist Visa are not included.
+      As you bid farewell to Bhutan, carry with you the serenity of its valleys, the warmth of its people, and the timeless beauty of its mountains and monasteries. Though your journey may end for now, the memories and experiences you’ve gathered will linger, calling you back.
     `,
   },
 ];

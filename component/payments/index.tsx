@@ -7,16 +7,17 @@ export default function PaymentCard() {
   return (
     <div className="w-full mx-auto p-6 min-h-screen flex items-center justify-center p-0">
       <Card className="w-full max-w-7xl shadow-xl overflow-hidden bg-white p-0">
-        <CardHeader className=" p-5">
-          <CardTitle className="text-2xl md:text-3xl font-bold text-gray-900 p-5">
+        {/* <CardHeader className="">
+        
+        </CardHeader> */}
+
+        <CardContent className="mb-2">
+            <CardTitle className="text-2xl md:text-3xl font-bold text-gray-900 pl-10 pt-10 pb-5">
             Payment to Lumora Tours and Travels
           </CardTitle>
-        </CardHeader>
-
-        <CardContent className="p-0">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Left Column - Content */}
-            <div className="p-8 lg:p-10 space-y-8 text-gray-700">
+            <div className="ml-10 text-gray-700">
               <section>
                 <h2 className="text-xl font-semibold text-gray-900 mb-3">
                   How to Send Payments to Bhutan
@@ -71,6 +72,10 @@ export default function PaymentCard() {
                   <li className="flex items-center gap-2">
                     <span className="text-red-600 font-bold">JPY</span>
                     <span className="text-gray-600">— Japan</span>
+                  </li>
+                   <li className="flex items-center gap-2">
+                    <span className="text-green-600 font-bold">INR</span>
+                    <span className="text-gray-600">— India</span>
                   </li>
                 </ul>
               </section>

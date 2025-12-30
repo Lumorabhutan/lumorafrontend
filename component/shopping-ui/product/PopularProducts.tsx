@@ -8,6 +8,7 @@ import { getApiEndpoint } from "@/app/api";
 import apiClient from "@/app/api/apiClient";
 import { LumoraTravelBanner } from ".";
 import { useCart } from "./cartContext";
+import { useRouter } from "next/navigation";
 const customDestinations = [
   {
     id: 1,
@@ -73,25 +74,29 @@ interface Product {
 
 const DEFAULT_IMAGE = "/placeholder-trip.jpg";
 
-// Single Product Card Component
+
 function ProductCard({ product }: { product: Product }) {
-  // Parse prices safely
+  const { addToCart } = useCart();
+  const [isExpanded, setIsExpanded] = useState(false);
+   const router = useRouter()
   const displayPrice = parseFloat(product.final_price) || 0;
   const originalPrice = parseFloat(product.original_price) || null;
   const discountPercent = parseFloat(product.discount_percent) || null;
-    const {addToCart} = useCart(); // <-- access the cart context
 
-  // Get first image from array
-  const imageSrc = product.images && product.images.length > 0 
-    ? product.images[0] 
-    : DEFAULT_IMAGE;
-
-  // Mock data for demo (since your API doesn't have these fields)
-  const location = "Bhutan"; // You can add this to your API
-  const rating = 4; // You can add this to your API
+  const imageSrc = product.images?.[0] || "/placeholder-trip.jpg";
+  const location = "Bhutan";
 
   return (
-    <div className="relative max-w-sm rounded-2xl overflow-hidden bg-white shadow-lg dark:bg-gray-900">
+    <div
+      className={`
+        relative max-w-sm rounded-2xl overflow-hidden bg-white shadow-lg dark:bg-gray-900
+        transform transition-all duration-300
+        hover:scale-105 hover:shadow-2xl
+        ${isExpanded ? "scale-110 shadow-2xl z-10" : ""}
+        cursor-pointer
+      `}
+      onClick={() => setIsExpanded(!isExpanded)} // Toggle expanded on click
+    >
       {/* Image */}
       <div className="relative">
         <Image
@@ -100,31 +105,12 @@ function ProductCard({ product }: { product: Product }) {
           width={400}
           height={300}
           className="w-full h-64 object-cover"
-          onError={(e) => {
-            const target = e.target as HTMLImageElement;
-            target.src = DEFAULT_IMAGE;
-          }}
         />
-
-        {/* Discount badge */}
         {discountPercent && discountPercent > 0 && (
           <span className="absolute left-3 bottom-3 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
             {discountPercent}% OFF
           </span>
         )}
-
-        {/* Favorite icon */}
-        <button 
-          className="absolute top-3 right-3 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
-          aria-label="Add to favorites"
-        >
-          <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 
-                     4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 
-                     14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 
-                     6.86-8.55 11.54L12 21.35z" />
-          </svg>
-        </button>
       </div>
 
       {/* Content */}
@@ -135,20 +121,17 @@ function ProductCard({ product }: { product: Product }) {
         {/* Duration & Location */}
         <div className="flex items-center gap-4 text-gray-500 dark:text-gray-400 text-sm mt-1">
           <div className="flex items-center gap-1">
-            <Calendar className="w-4 h-4" /> 
+            <Calendar className="w-4 h-4" />
             <span className="line-clamp-1">{product.description}</span>
           </div>
           <div className="flex items-center gap-1">
-            <MapPin className="w-4 h-4" /> 
+            <MapPin className="w-4 h-4" />
             <span>{location}</span>
           </div>
         </div>
 
-        {/* Star rating */}
-      
-
-        {/* Price */}
-        <div className="flex items-center justify-between mt-2">
+        {/* Price & Actions */}
+        <div className="flex items-center justify-between mt-2 gap-2">
           <div>
             <p className="text-lg font-bold text-gray-900 dark:text-white">
               ${displayPrice.toFixed(2)}
@@ -160,18 +143,27 @@ function ProductCard({ product }: { product: Product }) {
             )}
           </div>
 
-          <Button className="bg-green-500 hover:bg-green-600 rounded-full p-3"onClick={() => addToCart({
-                       ...product,
-                       quantity: 1,
-                       stock_quantity: 10,
-                     })}>
-           Add To Card
-          </Button>
+          <div className="flex flex-col gap-2">
+          
+            <Button
+              className="bg-green-500 hover:bg-green-600 rounded-full p-3 text-sm"
+    //           onClick={(e) => {
+    //             e.stopPropagation(); // Prevent card click
+    //             addToCart({ ...product, quantity: 1, stock_quantity: 10 });
+    // router.push(`/add-to-cart?id=${product.id}`);
+    
+    //           }}
+                onClick={() => router.push(`/add-to-card?id=${product.id}`)}
+            >
+             View Item
+            </Button>
+          </div>
         </div>
       </div>
     </div>
   );
 }
+
 
 // Main Component - Displays all products
 export default function PopularProducts() {
