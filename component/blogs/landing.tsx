@@ -116,7 +116,7 @@ const ArtCarousel = () => {
                                         {slide.category}
                                     </span> */}
 
-                                    <h2 className="text-4xl md:text-5xl font-semibold text-gray-900">
+                                    <h2 className="text-base md:text-base font-semibold text-gray-900">
                                         {slide.title}
                                     </h2>
 
