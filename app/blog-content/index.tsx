@@ -68,7 +68,7 @@ export default function BlogsItineraryPage() {
     <div className="px-6 py-10 max-w-7xl mx-auto flex flex-col lg:flex-row gap-10">
       {/* Main Timeline */}
       <div className="flex-1 relative">
-        <h1 className="text-3xl font-bold mb-2 text-center">Travl Blogs</h1>
+        <h1 className="text-3xl font-bold mb-2 text-center">Blogs</h1>
 
         {/* Vertical Timeline Line */}
 

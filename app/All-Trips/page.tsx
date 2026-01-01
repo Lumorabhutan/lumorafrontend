@@ -15,7 +15,6 @@ export default function AllTrips() {
     { id: "all", label: "All Trips" },
     { id: "advanture", label: "Adventure Trips" },
     { id: "nature", label: "Nature Trips" },
-    { id: "tour", label: "Tour Trips" },
     { id: "cultural", label: "Culture Trips" },
     { id: "leisure", label: "Leisure Trips" },
   ];
@@ -38,8 +37,7 @@ export default function AllTrips() {
         return <AdvantureTrips />;
       case "nature":
         return <NatureTrips />;
-      case "tour":
-        return <TourTrips />;
+     
       case "cultural":
         return <CultureTrips />;
       case "leisure":
