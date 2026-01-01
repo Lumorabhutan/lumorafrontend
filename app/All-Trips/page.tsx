@@ -25,7 +25,7 @@ export default function AllTrips() {
         <>
           <AdvantureTrips />
           <NatureTrips />
-          <TourTrips />
+          {/* <TourTrips /> */}
           <CultureTrips />
           <LeisureTTrips />
         </>
