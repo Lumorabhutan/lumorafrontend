@@ -112,17 +112,7 @@ Overnight in Paro
 As you bid farewell to Bhutan, carry with you the serenity of its valleys, the warmth of its people, and the timeless beauty of its mountains and monasteries. Though your journey may end for now, the memories and experiences you've gathered will linger, calling you back to the Land of Thunder Dragon soon!
     `,
     },
-    {
-      dayNumber: "Tour Information",
-      title: "Why Choose This Tour & Tour Details",
-      subtitle: "",
-
-      videoUrl: "",
-      content: `
-      ✨ Why Choose This Tour? <br/>
-This tour is designed for travelers who want more than sightseeing. It creates space for genuine human connection, meaningful cultural experiences, and a deeper appreciation of Bhutan's way of life. From intimate homestays to hands-on village activities, every moment offers insight into the traditions that define Bhutan. 
-    `,
-    },
+    
   ];
 
 

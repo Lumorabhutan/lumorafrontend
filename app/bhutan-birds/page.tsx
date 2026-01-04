@@ -263,10 +263,6 @@ const itinerary = [
       Transfer to Paro International Airport for your onward journey. 
       Your guide will bid you farewell with warm Bhutanese hospitality.<br/><br/>
 
-      <strong>Best Seasons for Birding in Bhutan:</strong><br/>
-      • Spring (March–May): Peak season, breeding plumage, high diversity<br/>
-      • Autumn (September–November): Clear skies, migratory species<br/>
-      • Winter (December–February): Best for Black-necked Cranes and high-altitude species
     `,
   },
 ];
