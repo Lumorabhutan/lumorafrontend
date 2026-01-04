@@ -103,6 +103,47 @@ export const viaPhuentsholingBhutanData: TourAboutData = {
 Enjoy easy walks, interactive cultural visits, gentle outdoor adventures, and plenty of time for bonding and relaxation.
 `,
 };
+export const eaternBhutandiscoveryData: TourAboutData = {
+  city: "Thimphu",
+  country: "Bhutan",
+  Season: "Autumn and Spring",
+
+  duration: "7 Days, 6 Nights",       // ✅ dynamic duration
+  price: "(US $: 1850-2050)",             // ✅ dynamic price
+  highlights: [
+    {
+      title: " 	Entry to Bhutan via Samdrup Jongkhar",
+      description:
+        "",
+    },
+    {
+      title: " 	Scenic drives along rivers, forests, and mountains",
+      description:
+        "",
+    },
+    {
+      title: " 	Cultural exploration in Trashigang, Trashiyangtse, and Pema Gatshel",
+      description:
+        "",
+    },
+    {
+      title: " 	Village walks, artisan workshops, and local cuisine experiences",
+      description:
+        "",
+    },
+    {
+      title: "Visits to monasteries, dzongs, and chortens from the exterior",
+      description:
+        "",
+    },
+    {
+      title: "Flexible itinerary allowing personal exploration",
+      description:
+        "",
+    }
+  ],
+  description: `Explore the untouched landscapes and rich culture of Eastern Bhutan over 8 days, entering via Samdrup Jongkhar from Guwahati Airport (India). Visit Trashigang, Trashiyangtse, and Pema Gatshel, experiencing vibrant valleys, historic dzongs, artisan villages, and serene monasteries. The flexible itinerary allows time for photography, cultural immersion, and authentic local experiences.`,
+};
 export const eaternBhutanData: TourAboutData = {
   city: "Thimphu",
   country: "Bhutan",
@@ -143,6 +184,37 @@ export const eaternBhutanData: TourAboutData = {
     }
   ],
   description: `Explore the untouched landscapes and rich culture of Eastern Bhutan over 8 days, entering via Samdrup Jongkhar from Guwahati Airport (India). Visit Trashigang, Trashiyangtse, and Pema Gatshel, experiencing vibrant valleys, historic dzongs, artisan villages, and serene monasteries. The flexible itinerary allows time for photography, cultural immersion, and authentic local experiences.`,
+};
+export const gangteyTrekBhutanData: TourAboutData = {
+  city: "Thimphu",
+  country: "Bhutan",
+  Season: "Autumn and Spring",
+
+  duration: "5 Days, 4 Nights",       // ✅ dynamic duration
+  price: "(US $: 1650-1850)",             // ✅ dynamic price
+  highlights: [
+    {
+      title: " Beginner-Friendly Himalayan Trek",
+      description:
+        "A short, moderate trek ideal for first-time trekkers, offering gentle trails without compromising on scenery or experience.",
+    },
+    {
+      title: "Stunning Passes & Valley Views",
+      description:
+        "Cross scenic passes like Tsele La and Shobe La, with sweeping views of pristine valleys and the Himalayan landscape.",
+    },
+    {
+      title: "Authentic Bhutanese Village Life",
+      description:
+        "Walk through traditional villages such as Gogona and Khothokha, experiencing local culture, yak pastures, and rural lifestyles.",
+    },
+    {
+      title: "Rich Nature & Birdwatching Experience",
+      description:
+        "Trek through forests and wetlands of Phobjikha Valley, renowned for its biodiversity, tranquility, and birdlife.",
+    }
+  ],
+  description: `The Gangtey Trek is a moderate, short trek through scenic valleys, forests, and traditional villages. It is ideal for beginners or travelers who prefer gentle trekking, offering cultural experiences, birdwatching, and stunning Himalayan landscapes. The best time to trek is March–May and September–November.`,
 };
 export const kayakingData: TourAboutData = {
   city: "Paro – Punakha – Thimphu",

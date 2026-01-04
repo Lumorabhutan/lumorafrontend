@@ -170,15 +170,6 @@ const itinerary = [
     content: `
       Transfer to Paro International Airport or drive to Jaigaon (Phuentsholing) for onward travel.<br/>
       Depart with cherished memories of Bhutan’s landscapes, culture, and family adventures.<br/>
-
-      <strong>Tour Style:</strong> Standard / Comfort<br/>
-      Thoughtfully curated accommodations, comfortable transportation, and authentic cultural experiences.<br/><br/>
-
-      <strong>Year-Round Availability:</strong><br/>
-      • Spring (March–May): Blooming landscapes<br/>
-      • Autumn (September–November): Clear skies & colors<br/>
-      • Winter (December–February): Crisp air, peaceful villages<br/><br/>
-
     `,
   },
 ];

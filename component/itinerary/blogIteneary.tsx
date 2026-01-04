@@ -29,24 +29,7 @@ export default function ItineraryDay({
       {/* Bullet Points */}
       {Array.isArray(content) ? (
         <ul className="space-y-0 md:space-y-0 text-gray-700 pl-0 md:pl-0">
-          {content.map((point, idx) => (
-            <li key={idx} className="relative pl-0 my-2">
-              <span
-                dangerouslySetInnerHTML={{ __html: point }}
-                className="font-sans text-base"
-              />
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p
-          className="text-gray-700 font-sans text-base leading-relaxed"
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
-      )}
-
-      {/* Image Section */}
-      {(leftImages || rightImage) && (
+             {(leftImages || rightImage) && (
         <>
           {totalImages === 2 ? (
             // Flex row when exactly two images
@@ -89,6 +72,24 @@ export default function ItineraryDay({
           )}
         </>
       )}
+          {content.map((point, idx) => (
+            <li key={idx} className="relative pl-0 my-2">
+              <span
+                dangerouslySetInnerHTML={{ __html: point }}
+                className="font-sans text-base"
+              />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p
+          className="text-gray-700 font-sans text-base leading-relaxed"
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
+      )}
+
+      {/* Image Section */}
+   
     </div>
   );
 }

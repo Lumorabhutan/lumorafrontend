@@ -132,16 +132,7 @@ const itinerary = [
     videoUrl: "",
     content: `
       <strong>✨ Why Choose This Tour?</strong><br/>
-      This tour is designed for travelers who want more than sightseeing. It creates space for genuine human connection, meaningful cultural experiences, and a deeper appreciation of Bhutan's way of life. From intimate homestays to hands-on village activities, every moment offers insight into the traditions that define Bhutan.<br/><br/>
-
-      <strong>🏷️ Tour Style</strong><br/>
-      Standard / Comfort<br/>
-      Thoughtfully curated accommodations, comfortable transportation, and authentic cultural experiences designed for meaningful, mindful travel.<br/><br/>
-
-      <strong>📌 Year-Round Availability</strong><br/>
-      Spring (March–May): Blooming landscapes, ideal weather<br/>
-      Autumn (September–November): Clear skies & beautiful colors<br/>
-      Winter (December–February): Crisp air, peaceful villages, fewer tourists<br/><br/>
+      This tour is designed for travelers who want more than sightseeing. It creates space for genuine human connection, meaningful cultural experiences, and a deeper appreciation of Bhutan's way of life. From intimate homestays to hands-on village activities, every moment offers insight into the traditions that define Bhutan.<br/>
 
     `,
   },
