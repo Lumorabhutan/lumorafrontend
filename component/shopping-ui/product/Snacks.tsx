@@ -8,6 +8,7 @@ import { getApiEndpoint } from "@/app/api";
 import apiClient from "@/app/api/apiClient";
 import { LumoraTravelBanner } from ".";
 import { useCart } from "./cartContext";
+import { useRouter } from "next/navigation";
 
 interface Product {
   id: number;
@@ -26,6 +27,8 @@ const DEFAULT_IMAGE = "/placeholder-trip.jpg";
 // Single Product Card Component
 function ProductCard({ product }: { product: Product }) {
   // Parse prices safely
+     const router = useRouter()
+  
   const displayPrice = parseFloat(product.final_price) || 0;
   const originalPrice = parseFloat(product.original_price) || null;
   const discountPercent = parseFloat(product.discount_percent) || null;
@@ -109,13 +112,18 @@ function ProductCard({ product }: { product: Product }) {
             )}
           </div>
 
-          <Button className="bg-green-500 hover:bg-green-600 rounded-full p-3" onClick={() => addToCart({
-                       ...product,
-                       quantity: 1,
-                       stock_quantity: 10,
-                     })}>
-           Add To Card
-          </Button>
+          <Button
+                      className="bg-green-500 hover:bg-green-600 rounded-full p-3 text-sm"
+            //           onClick={(e) => {
+            //             e.stopPropagation(); // Prevent card click
+            //             addToCart({ ...product, quantity: 1, stock_quantity: 10 });
+            // router.push(`/add-to-cart?id=${product.id}`);
+            
+            //           }}
+                        onClick={() => router.push(`/add-to-card?id=${product.id}`)}
+                    >
+                     View Item
+                    </Button>
         </div>
       </div>
     </div>

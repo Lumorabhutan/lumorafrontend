@@ -118,7 +118,7 @@ export default function TouristTalkAboutUs() {
                         </Avatar>
                         <div>
                           <p className="font-semibold text-gray-900">{t.name}</p>
-                          <p className="text-sm text-gray-500">{t.email}</p>
+                          {/* <p className="text-sm text-gray-500">{t.email}</p> */}
                         </div>
                       </div>
                       <span className="text-4xl text-gray-200 select-none">”</span>

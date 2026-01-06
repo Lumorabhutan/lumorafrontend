@@ -125,8 +125,7 @@ export function ReviewDrawer({
         onOpenChange(false);
       } catch (err: any) {
         const errorMsg =
-          err?.response?.data?.message ||
-          err?.message ||
+        err.response.data.error||
           "Failed to save review. Please try again.";
 
         showToast.error(errorMsg, {

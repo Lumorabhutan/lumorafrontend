@@ -9,6 +9,7 @@ import apiClient from "@/app/api/apiClient";
 import { customDestinations, customDeals } from "@/data/e-shop";
 import { LumoraTravelBanner } from ".";
 import { useCart } from "./cartContext";
+import { useRouter } from "next/navigation";
 
 interface Product {
   id: number;
@@ -31,6 +32,7 @@ function ProductCard({ product }: { product: Product }) {
   const originalPrice = parseFloat(product.original_price) || null;
   const discountPercent = parseFloat(product.discount_percent) || null;
     const {addToCart} = useCart(); // <-- access the cart context
+     const router = useRouter()
   
   // Get first image from array
   const imageSrc = product.images && product.images.length > 0 
@@ -111,13 +113,18 @@ function ProductCard({ product }: { product: Product }) {
             )}
           </div>
 
-          <Button className="bg-green-500 hover:bg-green-600 rounded-full p-3"onClick={() => addToCart({
-                       ...product,
-                       quantity: 1,
-                       stock_quantity: 10,
-                     })}>
-           Add To Card
-          </Button>
+         <Button
+                     className="bg-green-500 hover:bg-green-600 rounded-full p-3 text-sm"
+           //           onClick={(e) => {
+           //             e.stopPropagation(); // Prevent card click
+           //             addToCart({ ...product, quantity: 1, stock_quantity: 10 });
+           // router.push(`/add-to-cart?id=${product.id}`);
+           
+           //           }}
+                       onClick={() => router.push(`/add-to-card?id=${product.id}`)}
+                   >
+                    View Item
+                   </Button>
         </div>
       </div>
     </div>
@@ -180,13 +187,13 @@ export default function PopularProducts() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-          <LumoraTravelBanner 
+          {/* <LumoraTravelBanner 
                         destinations={customDestinations}
                         quickDeals={ customDeals as any}
                         companyName="Lumora Tour & Travel"
                         tagline="Discover your next adventure with exclusive deals"
                         autoSlideInterval={5000}
-                      />
+                      /> */}
       <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
         Popular Products
       </h2>
