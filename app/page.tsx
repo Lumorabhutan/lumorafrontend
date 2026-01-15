@@ -33,7 +33,7 @@ export default function Home() {
         title="Lumora Tours and Travels video"
         subtitle="Beautiful & Romantic"
         backgroundImage={image1}
-        video={true}
+        video={false}
       />
       <TouristTalkAboutUs />
       <Footer />

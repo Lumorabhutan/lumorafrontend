@@ -71,13 +71,13 @@ export default function HeroVideoSection() {
               </VisuallyHidden>
 
               <div className="relative aspect-video w-full">
-                <iframe
+                {/* <iframe
                   className="w-full h-full rounded-xl"
                   src="https://www.youtube.com/embed/Scxs7L0vhZ4?autoplay=1"
                   title="Beautiful & Romantic Video"
                   allow="autoplay; encrypted-media"
                   allowFullScreen
-                ></iframe>
+                ></iframe> */}
               </div>
             </DialogContent>
           </Dialog>
