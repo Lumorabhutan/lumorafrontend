@@ -1,6 +1,6 @@
 // export const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL!;
-// export const apiBaseUrl = "https://lumorabackend-production-e343.up.railway.app/api/v1";
-export const apiBaseUrl = "http://localhost:3001"
+export const apiBaseUrl = "https://lumorabackend-production-e343.up.railway.app/api/v1";
+// export const apiBaseUrl = "http://localhost:3001"
 export const getApiEndpoint = {
   // Auth
   login: () => `${apiBaseUrl}/login`,
