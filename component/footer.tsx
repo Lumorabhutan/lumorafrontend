@@ -64,7 +64,7 @@ export default function Footer() {
             </li> */}
             <li>
               <a
-                href="/Lumora Tours and Travels Policy.pdf"
+                href="/LumoraToursandTravelsPolicy.pdf"
                 className="hover:text-white"
               >
                 Travel Policy

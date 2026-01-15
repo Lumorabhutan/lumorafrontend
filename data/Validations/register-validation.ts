@@ -66,8 +66,8 @@ export const validationConfirmPasswordSchema = Yup.object().shape({
     .min(6, "Password must be at least 6 characters long"), // Fixed the message (you said 8 but min is 6)
 
   newpassword: Yup.string()
-    .required("New Password is required")
-    .min(6, "New Password must be at least 6 characters long"),
+    .required("Confirm Password is required")
+    .min(6, "Confirm Password must be at least 6 characters long"),
 });
 export const validationEmailSchema = Yup.object().shape({
   email: Yup.string()

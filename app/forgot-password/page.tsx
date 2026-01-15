@@ -88,7 +88,7 @@ export default function ForgotPassword() {
           <Card className="rounded-sm w-[360px] h-full">
             <CardHeader>
               <CardTitle className="font-bold text-xl font-sans">
-                Enter New Password
+                Enter Confirm Password
               </CardTitle>
               <BorderHorizontal borderStyle="w-full border-b border-gray-300 mt-2 mr-2" />
             </CardHeader>

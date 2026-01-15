@@ -28,9 +28,9 @@ export const ForgotPassFields = [
   {
     type: "inputwithicon",
     name: "newpassword", // Changed from "Password" to "password"
-    label: "New Password",
+    label: "Confirm Password",
     Icon: Lock,
-    placeholder: 'Enter your New Password',
+    placeholder: 'Enter your Confirm Password',
 
     subType: "password"
   },
