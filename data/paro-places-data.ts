@@ -58,7 +58,7 @@ export const HoneymoonData: TourAboutData = {
   Season: "Autumn and Spring",
 
   duration: "7 Days, 6 Nights",       // ✅ dynamic duration
-  price: "(USD 1900-2050)",             // ✅ dynamic price
+  price: "0",             // ✅ dynamic price
   highlights: [
     {
       title: "Destinations",
@@ -80,7 +80,7 @@ export const viaPhuentsholingBhutanData: TourAboutData = {
   Season: "Autumn and Spring",
 
   duration: "7 Days, 6 Nights ",       // ✅ dynamic duration
-  price: "(USD-1750-1950)",             // ✅ dynamic price
+  price: "0",             // ✅ dynamic price
   highlights: [
     {
       title: "Entry to Bhutan via Phuentsholing",
@@ -109,7 +109,7 @@ export const eaternBhutandiscoveryData: TourAboutData = {
   Season: "Autumn and Spring",
 
   duration: "7 Days, 6 Nights",       // ✅ dynamic duration
-  price: "(US $: 1850-2050)",             // ✅ dynamic price
+  price: "0",             // ✅ dynamic price
   highlights: [
     {
       title: " 	Entry to Bhutan via Samdrup Jongkhar",
@@ -150,7 +150,7 @@ export const eaternBhutanData: TourAboutData = {
   Season: "Autumn and Spring",
 
   duration: "8 Days, 6 Nights",       // ✅ dynamic duration
-  price: "(USD-2000-2200)",             // ✅ dynamic price
+  price: "0",             // ✅ dynamic price
   highlights: [
     {
       title: "Entry to Bhutan via Samdrup Jongkhar",
@@ -191,7 +191,7 @@ export const gangteyTrekBhutanData: TourAboutData = {
   Season: "Autumn and Spring",
 
   duration: "5 Days, 4 Nights",       // ✅ dynamic duration
-  price: "(US $: 1650-1850)",             // ✅ dynamic price
+  price: "0",             // ✅ dynamic price
   highlights: [
     {
       title: " Beginner-Friendly Himalayan Trek",
@@ -221,7 +221,7 @@ export const kayakingData: TourAboutData = {
   country: "Bhutan",
   Season: "March–May & September–November",
   duration: "5 Days / 4 Nights",
-  price: "(USD 1,850 – 2,000 per person)",
+  price: "0",
 
   highlights: [
     {
@@ -251,7 +251,7 @@ export const newTourPackageData: TourAboutData = {
   Season: "Autumn and Spring",
 
   duration: "7 Days, 6 Nights",       // ✅ dynamic duration
-  price: "(USD-1850-2000)",             // ✅ dynamic price
+  price: "0",             // ✅ dynamic price
   highlights: [
     {
       title: " 	Village walks and cultural immersion in Paro, Haa, Punakha, and Phobjikha",
@@ -302,7 +302,7 @@ export const culturegastronomyData: TourAboutData = {
   Season: "Autumn and Spring",
 
   duration: "6 Days, 5 Nights",       // ✅ dynamic duration
-  price: "(USD-1900-2200)",             // ✅ dynamic price
+  price: "0",             // ✅ dynamic price
   highlights: [
     {
       title: "Destinations",
@@ -325,7 +325,7 @@ export const dagalatrekData: TourAboutData = {
   Season: "Autumn and Spring",
 
   duration: "8 Days, 7 Nights",       // ✅ dynamic duration
-  price: "(USD 1750-2050)",             // ✅ dynamic price
+  price: "0",             // ✅ dynamic price
   highlights: [
     {
       title: "Destinations",
@@ -348,7 +348,7 @@ export const birdsData: TourAboutData = {
   Season: "Autumn and Spring",
 
   duration: "8-12 Days (Flexible)",       // ✅ dynamic duration
-  price: "(USD-1550-2200)",             // ✅ dynamic price
+  price: "0",             // ✅ dynamic price
   highlights: [
     {
       title: "Destinations",
@@ -371,7 +371,7 @@ export const easternbhutanbirdsData: TourAboutData = {
   Season: "Autumn and Spring",
 
   duration: "10 Days, 9 Nights",       // ✅ dynamic duration
-  price: "(USD-1750-2150)",             // ✅ dynamic price
+  price: "0",             // ✅ dynamic price
   highlights: [
     {
       title: "Destinations",
@@ -397,7 +397,7 @@ export const mockTourData: TourAboutData = {
   Season: "Autumn and Spring",
 
   duration: "3 Days, 2 Nights",       // ✅ dynamic duration
-  price: "(USD-1850-2000)",             // ✅ dynamic price
+  price: "0",             // ✅ dynamic price
   highlights: [
     {
       title: "Thimphu City Exploration",
@@ -433,7 +433,7 @@ export const raftingTourData: TourAboutData = {
   Season: "Autumn and Spring",
 
   duration: "6 Days, 5Nights",       // ✅ dynamic duration
-  price: "USD-1750-2050",             // ✅ dynamic price
+  price: "0",             // ✅ dynamic price
   highlights: [
     {
       title: "Thimphu City Exploration",
@@ -468,7 +468,7 @@ export const generalFestivalData: TourAboutData = {
   country: "Bhutan",
   Season: "Autumn and Spring",
   duration: "6-8 Days (Flexible)",       // ✅ dynamic duration
-  price: "(USD 1450-2000)",             // ✅ dynamic price
+  price: "0",             // ✅ dynamic price
   highlights: [
     {
       title: "Thimphu City Exploration",
@@ -503,7 +503,7 @@ export const JomolhariData: TourAboutData = {
   country: "Bhutan",
   Season: "March–May & September–November",
   duration: "8 Days / 7 Nights",       // ✅ dynamic duration
-  price: "(US $1850–2150)",             // ✅ dynamic price
+  price: "0",             // ✅ dynamic price
   highlights: [
     {
       title: "Majestic Views of Mount Jomolhari",
@@ -542,7 +542,7 @@ export const dassainData: TourAboutData = {
   country: "Bhutan",
   Season: "September–October (Dassain Season)",
   duration: "5 Days / 4 Nights",
-  price: "(USD 1,550 – 1,850 per person)",
+  price: "0",
   highlights: [
     {
       title: "Traditional Khada Welcome & Dassain Welcome Tea",
@@ -592,7 +592,7 @@ export const introBhutanData: TourAboutData = {
   country: "Bhutan",
   Season: "Autumn and Spring",
   duration: "6 Days / 5 Nights",       // ✅ dynamic duration
-  price: "(US $1850–2150)",             // ✅ dynamic price
+  price: "0",             // ✅ dynamic price
   highlights: [
     {
       title: "Thimphu City Exploration",
@@ -631,7 +631,7 @@ export const familyTourData: TourAboutData = {
   Season: "Autumn and Spring",
 
   duration: "7 Days, 6 Nights",       // ✅ dynamic duration
-  price: "(USD-1650-1850)",             // ✅ dynamic price
+  price: "0",             // ✅ dynamic price
   highlights: [
     {
       title: "Thimphu City Exploration",
@@ -669,7 +669,7 @@ export const bumthangTourData: TourAboutData = {
   Season: "Autumn and Spring",
 
   duration: "7 Days, 6 Nights",       // ✅ dynamic duration
-  price: "USD 2000-2200",             // ✅ dynamic price
+  price: "0",             // ✅ dynamic price
   highlights: [
     {
       title: "Visit the sacred Jambay Lhakhang",
@@ -715,7 +715,7 @@ export const ParoTshechu: TourAboutData = {
   Season: "Autumn and Spring",
 
   duration: "Days, 2 Nights ",       // ✅ dynamic duration
-  price: "USD: 1900-2200",             // ✅ dynamic price
+  price: "0",             // ✅ dynamic price
   highlights: [
     {
       title: "Thimphu City Exploration",
@@ -753,7 +753,7 @@ export const FeelBhutanTour: TourAboutData = {
   Season: "Autumn and Spring",
 
   duration: "5 Days, 4 Nights",       // ✅ dynamic duration
-  price: "(USD-1850-2200)",             // ✅ dynamic price
+  price: "0",             // ✅ dynamic price
   highlights: [
     {
       title: "Hike to the Iconic Taktsang (Tiger’s Nest) Monastery: ",
@@ -786,7 +786,7 @@ export const PhotoTour: TourAboutData = {
   country: "Bhutan",
   Season: "March–May & September–November (Best light & clear skies)",
   duration: "7 Days / 6 Nights",
-  price: "(USD 1,650 – 1,950 per person)",
+  price: "0",
   highlights: [
     {
       title: "Dramatic Paro Valley Landing & Sunset at Paro Rinpung Dzong",
@@ -839,7 +839,7 @@ export const oneWeekInBhutan: TourAboutData = {
   Season: "Autumn and Spring",
 
   duration: "7 Days, 6 Nights",       // ✅ dynamic duration
-  price: "USD 2200-2500",             // ✅ dynamic price
+  price: "0",             // ✅ dynamic price
   highlights: [
     {
       title: "Hike to the Iconic Taktsang (Tiger’s Nest) Monastery",

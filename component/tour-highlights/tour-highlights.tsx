@@ -44,7 +44,7 @@ const TourAbout: React.FC<TourAboutProps> = ({ data }) => {
         {/* ---------- Duration & Description ---------- */}
         <section>
           <h1 className="text-lg font-semibold mb-3">
-            {duration} - {price} <br />
+            {duration}  {price != "0" ? `Price: -${price}` : ""} <br />
             {Season && (
               <div>
                 Best seasons to visit: {Season}

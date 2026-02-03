@@ -109,7 +109,7 @@ const PlacesToTravelOptions: React.FC<TravelingtoPlacesProps> = ({ data }) => {
         <CarouselContent className="flex gap-4">
           {data.map((details, index) => (
             <CarouselItem key={index} className="flex-none w-[350px]">
-              <Card   onClick={() => handleClick(details.slug)} className="w-full h-[480px] bg-white overflow-hidden hover:shadow-2xl transition-shadow duration-300 flex flex-col p-0 rounded-2xl">
+              <Card onClick={() => handleClick(details.slug)} className="w-full h-[480px] bg-white overflow-hidden hover:shadow-2xl transition-shadow duration-300 flex flex-col p-0 rounded-2xl">
                 {/* Image Section */}
                 <CardHeader className="relative p-0">
                   <Image
@@ -133,7 +133,7 @@ const PlacesToTravelOptions: React.FC<TravelingtoPlacesProps> = ({ data }) => {
                   )}
 
                   {/* Discount Tag */}
-                  {details.discountPercent !==0 && (
+                  {details.discountPercent !== 0 && (
                     <div className="absolute bottom-2 left-2 bg-green-500 text-white text-xs px-2 py-1 rounded-md flex items-center gap-1 shadow">
                       <Tag className="w-3 h-3" /> {details.discountPercent}% OFF
                     </div>
@@ -151,7 +151,7 @@ const PlacesToTravelOptions: React.FC<TravelingtoPlacesProps> = ({ data }) => {
                     {/* Title */}
                     <h2
                       className="text-base font-bold text-gray-900 line-clamp-2 cursor-pointer"
-                    
+
                     >
                       {details.title}
                     </h2>
@@ -185,11 +185,10 @@ const PlacesToTravelOptions: React.FC<TravelingtoPlacesProps> = ({ data }) => {
                         {[...Array(5)].map((_, i) => (
                           <Star
                             key={i}
-                            className={`w-3.5 h-3.5 ${
-                              i < (details.ratingnumber || 4)
+                            className={`w-3.5 h-3.5 ${i < (details.ratingnumber || 4)
                                 ? "fill-amber-400 text-amber-400"
                                 : "text-gray-300"
-                            }`}
+                              }`}
                           />
                         ))}
                       </div>
@@ -206,10 +205,12 @@ const PlacesToTravelOptions: React.FC<TravelingtoPlacesProps> = ({ data }) => {
                 <CardFooter className="p-3 pt-0">
                   <div className="flex items-center justify-between w-full">
                     <div className="flex flex-col">
-                      <span className="text-lg font-bold text-gray-900">
-                        ${details.finalPrice}
-                      </span>
-                      {details.discountPercent !=0 && (
+                      {details.originalPrice != 0 &&
+                        <span className="text-lg font-bold text-gray-900">
+                          ${details.finalPrice}
+                        </span>
+                      }
+                      {details.discountPercent != 0 && details.originalPrice != 0 && (
                         <span className="text-sm text-gray-400 line-through">
                           ${details.originalPrice}
                         </span>
@@ -234,11 +235,10 @@ const PlacesToTravelOptions: React.FC<TravelingtoPlacesProps> = ({ data }) => {
           <div
             key={i}
             onClick={() => handleDotClick(i)}
-            className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-              i === currentIndex
+            className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${i === currentIndex
                 ? "bg-green-600 w-12"
                 : "bg-gray-300 w-6 hover:bg-green-400"
-            }`}
+              }`}
           ></div>
         ))}
       </div>
